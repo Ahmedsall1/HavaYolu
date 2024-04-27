@@ -2,6 +2,7 @@
 
 A new Flutter project.
 
+<h3>this project like the <a href="https://github.com/Ahmedsall1/HavaYolu-Bilgi-Sistemi-">HavaYolu-Bilgi-Sistemi</a> but with flutter</h3>
 ## Getting Started
 
 This project is a starting point for a Flutter application.
