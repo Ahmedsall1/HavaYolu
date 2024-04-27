@@ -1,4 +1,4 @@
-import 'package:havayolu/Classes/Yolcu.dart';
+import 'Yolcu.dart';
 
 class Koltuk {
 
@@ -25,7 +25,7 @@ class Koltuk {
         }
     }
     // Bilgiler Al ve Koltuk tip Belirle
-    Koltuk(int sira,var harf ,int toplamsira,double ucret) {
+    Koltuk(int sira,var harf ,int toplamsira,this.ucret) {
         KoltukUcreti(sira, toplamsira, ucret);
         No=sira.toString() + harf.toString();
     }

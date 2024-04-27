@@ -1,22 +1,23 @@
-import 'package:havayolu/Classes/Ucus.dart';
-import 'package:havayolu/Classes/User.dart';
-import 'package:havayolu/Classes/HavaYolu.dart';
+import 'Ucus.dart';
+import 'User.dart';
+import 'HavaYolu.dart';
 
-class Yolcu extends User{
+class Yolcu extends User {
+  static var tip = ["Standart", "VIP"];
+  late String Ytip = tip[0];
+  late int sira, harf;
+  late List<Ucus> ucuslar = [];
+  late List<String> Koltuklar = [];
+  late String Koltuk;
+  late String email;
 
-    static var tip=["Standart", "VIP"];
-    late String Ytip=tip[0];
-    late int sira , harf;
-    late List<Ucus> ucuslar;
-    late List<String> Koltuklar;
-    late String Koltuk;
+  Yolcu(super.name) {
+    HavaYolu.YolcuList.add(this);
+    email = name + "@gmail.com";
+  }
 
-    Yolcu(super.name){
-        HavaYolu.YolcuList.add(this);
-    }
-
-    @override
-    String gettip(){
-        return "Yolcu";    
-    }
+  @override
+  String gettip() {
+    return "Yolcu";
+  }
 }

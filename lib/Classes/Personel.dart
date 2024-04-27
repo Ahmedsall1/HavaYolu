@@ -1,8 +1,8 @@
-import 'package:havayolu/Classes/User.dart';
-import 'package:havayolu/Classes/Ucus.dart';
+import 'User.dart';
+import 'Ucus.dart';
 
 class Personel extends User {
-  late List<Ucus> Ucuslar ;
+  late List<Ucus> Ucuslar =[];
   Personel(super.name) ;
 
   @override

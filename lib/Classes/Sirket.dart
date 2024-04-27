@@ -1,7 +1,7 @@
-import 'package:havayolu/Classes/Ucak.dart';
-import 'package:havayolu/Classes/Personel.dart';
-import 'package:havayolu/Classes/Ucus.dart';
-import 'package:havayolu/Classes/HavaYolu.dart';
+import 'Ucak.dart';
+import 'Personel.dart';
+import 'Ucus.dart';
+import 'HavaYolu.dart';
 
 class Sirket {
     
@@ -9,8 +9,8 @@ class Sirket {
     late int id;
     late String name;  
     late Personel yonetici ;
-    late List<Ucak> ucakList ;// her Şirketin uçakların listesi verdır
-    late List<Ucus> ucusList ;// her Şirketin uçuşların listesi verdır
+    late List<Ucak> ucakList =[];// her Şirketin uçakların listesi verdır
+    late List<Ucus> ucusList =[];// her Şirketin uçuşların listesi verdır
     
     // set get methodlar
     String SirketinAdi() {return name;}
@@ -20,10 +20,10 @@ class Sirket {
     void ucusEkle(Ucus ucus) { ucusList.add(ucus);}
     void setName(String name) {this.name=name;}
     // Oluşturcu
-    Sirket(String name,Ucak ucak) { 
+    Sirket(this.name) { 
         id=ID;
         ID++;
-        ucakList.add(ucak);
+ 
         bool ar = false;
         for(Sirket sirket in HavaYolu.SirketiList){
             if(sirket.name==name){

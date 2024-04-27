@@ -1,4 +1,4 @@
-import 'package:havayolu/Classes/User.dart';
+import 'User.dart';
 
 class Yonetici extends User {
   //  HavaYolu havayolu=new HavaYolu();

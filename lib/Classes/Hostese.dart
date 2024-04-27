@@ -1,4 +1,4 @@
-import 'package:havayolu/Classes/Personel.dart';
+import 'Personel.dart';
 
 class Hostese extends Personel {
   
