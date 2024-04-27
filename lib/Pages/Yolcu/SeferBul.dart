@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:havayolu/Pages/Yolcu/UcusSec.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
+import 'package:havayolu/Classes/Sefer.dart';
 
 var  nerden = " ";
 var nereye = " ";

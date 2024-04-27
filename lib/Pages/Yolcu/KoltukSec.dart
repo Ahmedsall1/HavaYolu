@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:havayolu/Pages/Yolcu/Bilet.dart';
 
 class KoltukSec extends StatelessWidget {
-  const KoltukSec({super.key});
+  int id;
+  KoltukSec({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {

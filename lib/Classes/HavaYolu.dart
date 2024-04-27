@@ -115,14 +115,24 @@ class HavaYolu {
   static List<Ucak> UcakList = [];
   static List<Ucus> UcusList = [];
 
-  void SetSefer(int No, var KM, String nerden, String nereye, String sure,
-      DateTime date) {
-    SeferList.add(Sefer(KM, nerden, nereye, sure, date,true));
+  static List<Ucus> ucuslar(String nerden, String nereye, DateTime time) {
+    List<Ucus> ucuslar = [];
+    for (Ucus ucus in UcusList) {
+      if (ucus.nerden == nerden && ucus.nereye == nereye && ucus.date == time) {
+        ucuslar.add(ucus);
+      }
+    }
+    return ucuslar;
+  }
+
+  void SetSefer(
+      var KM, String nerden, String nereye, String sure, DateTime date) {
+    SeferList.add(Sefer(KM, nerden, nereye, sure, date, true));
   }
 
   void SetSeferFul(Sefer sefer) {
-    SeferList.add(
-        Sefer(sefer.KM, sefer.nerden, sefer.nereye, sefer.sure, sefer.date,true));
+    SeferList.add(Sefer(
+        sefer.KM, sefer.nerden, sefer.nereye, sefer.sure, sefer.date, true));
   }
 
   void setSirket(Sirket sirket) {
@@ -158,7 +168,7 @@ class HavaYolu {
       i++;
 
       Sefer sefer =
-          Sefer(i, airport, HavaYolu.Airports[0], saat.toString(), date,true);
+          Sefer(i, airport, HavaYolu.Airports[0], saat.toString(), date, true);
 
       Ucus(saat.toString(), sefer, ucak, 400);
       // Sirket("AirPort" + i.toString(), ucak);
