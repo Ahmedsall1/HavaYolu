@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:havayolu/Pages/Yolcu/UcusSec.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Sefer.dart';
 
-var  nerden = " ";
+var nerden = " ";
 var nereye = " ";
 DateTime tarih = DateTime.now();
 
@@ -18,7 +19,7 @@ class _SeferBulState extends State<SeferBul> {
   late DateTime selectedDate = DateTime.now();
   late DateTime nextYear =
       selectedDate.add(const Duration(days: 365)); // Adding one year
-
+  String dropdownValue = HavaYolu.Airports[0];
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
         context: context,
@@ -43,11 +44,38 @@ class _SeferBulState extends State<SeferBul> {
       body: Center(
         child: Column(
           children: [
-            const Nerden(),
-            const Nereye(),
+            // const Nerden(),
+            // const Nereye(),
             Text("${selectedDate.toLocal()}".split(' ')[0]),
             const SizedBox(
               height: 20.0,
+            ),
+            DropdownSearch<String>(
+              selectedItem: HavaYolu.Airports[0],
+              dropdownBuilder: (context, sleectedItem) {
+                nerden = sleectedItem.toString();
+                return Text(sleectedItem.toString());
+              },
+              items: HavaYolu.Airports,
+              popupProps: PopupProps.bottomSheet(
+                showSelectedItems: true,
+                isFilterOnline: true,
+                showSearchBox: true,
+              ),
+            ),
+            DropdownSearch<String>(
+              selectedItem: HavaYolu.Airports[1],
+              dropdownBuilder: (context, sleectedItem) {
+                nereye = sleectedItem.toString();
+                print(sleectedItem.toString());
+                return Text(sleectedItem.toString());
+              },
+              items: HavaYolu.Airports,
+              popupProps: PopupProps.bottomSheet(
+                showSelectedItems: true,
+                isFilterOnline: true,
+                showSearchBox: true,
+              ),
             ),
             ElevatedButton(
               onPressed: () => _selectDate(context),

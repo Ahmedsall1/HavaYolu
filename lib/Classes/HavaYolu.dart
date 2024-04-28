@@ -125,6 +125,16 @@ class HavaYolu {
     return ucuslar;
   }
 
+  static Ucus GetUcus(int id) {
+    Ucus ucus1=UcusList[0];
+    for (Ucus ucus in UcusList) {
+      if (id == ucus.i) {
+        return ucus;
+      }
+    }
+    return ucus1;
+  }
+
   void SetSefer(
       var KM, String nerden, String nereye, String sure, DateTime date) {
     SeferList.add(Sefer(KM, nerden, nereye, sure, date, true));

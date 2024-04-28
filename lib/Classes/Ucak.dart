@@ -19,7 +19,7 @@ class Ucak {
   late int siraSayisi;
   late double koltukUcreti;
   late int koltukSayisi;
-  late List<List<Koltuk>> kolutkList=[];
+  late List<List<Koltuk>> kolutkList = [];
   // Koltuk saysi Uçak tip göre sırala
   void sayisi(String tip) {
     this.tip = tip;
@@ -40,7 +40,8 @@ class Ucak {
     sayisi(tip);
     id = ID;
     ID++;
-
+    this.sirketadi = sirketadi;
+    koltukSayisi = harfSayisi * siraSayisi;
     hosteseList.add(hostes);
 
     for (int i = 0; i < siraSayisi; i++) {
@@ -59,7 +60,7 @@ class Ucak {
         a = true;
       }
     }
-    if(a==false){
+    if (a == false) {
       Sirket sir = Sirket(sirketadi);
       sir.ucakList.add(this);
     }
