@@ -11,6 +11,7 @@ class PersonelDuzelt extends StatelessWidget {
         title: const Text('Personele Duzelt'),
       ),
       body: Center(
+        
         // child: ElevatedButton(
         //   child: const Text('Yonetici'),
         //   onPressed: () {

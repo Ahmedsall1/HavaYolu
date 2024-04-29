@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:havayolu/Classes/Sirket.dart';
+import 'package:havayolu/Pages/Yonetici/Dashboard/Sirketler.dart';
 // import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 
 class SirketEkle extends StatelessWidget {
-  const SirketEkle({super.key});
+  late String name;
+   SirketEkle({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +14,45 @@ class SirketEkle extends StatelessWidget {
         title: const Text('Sirket Ekle'),
       ),
       body: Center(
+        child: Column(
+          children: [
+            Padding(
+              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+              padding: const EdgeInsets.only(
+                  left: 15.0, right: 15.0, top: 15, bottom: 30),
+              child: TextField(
+                onChanged: (value) {
+                  name = value;
+                },
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Name',
+                    hintText: 'Personel Adi Giriniz'),
+              ),
+            ),
+            Container(
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 0, 150, 122),
+                  borderRadius: BorderRadius.circular(20)),
+              child: TextButton(
+                onPressed: () {
+                  if (name != "") {
+
+                      Sirket(name);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => Sirketler()));
+                  } 
+                },
+                child: Text(
+                  'Ekle',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ),
+            ),
+          ],
+        ),
         // child: ElevatedButton(
         //   child: const Text('Yonetici'),
         //   onPressed: () {

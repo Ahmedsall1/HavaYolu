@@ -6,13 +6,15 @@ import 'package:havayolu/Classes/Sirket.dart';
 import 'package:havayolu/Classes/Yolcu.dart';
 import 'package:havayolu/Pages/Yolcu/Index.dart';
 import 'package:havayolu/Pages/Personel/Pindex.dart';
+import 'package:havayolu/Pages/Yonetici/Login.dart';
 import 'package:havayolu/Pages/Yonetici/YIndex.dart';
 import 'package:havayolu/Classes/Ucus.dart';
 import 'package:havayolu/Classes/Ucak.dart';
 import 'package:havayolu/Classes/Sefer.dart';
 
 void main() {
-  DateTime dt = DateTime.utc(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+  DateTime dt = DateTime.utc(
+      DateTime.now().year, DateTime.now().month, DateTime.now().day);
   Sirket("Anadolu Jet");
   Yolcu yol = Yolcu("Muhammed");
   yol.Ytip = Yolcu.tip[1];
@@ -54,7 +56,7 @@ class FirstRoute extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  Pindex()),
+                  MaterialPageRoute(builder: (context) => Pindex()),
                 );
               },
             ),
@@ -63,7 +65,7 @@ class FirstRoute extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const YIndex()),
+                  MaterialPageRoute(builder: (context) => Login()),
                 );
               },
             ),

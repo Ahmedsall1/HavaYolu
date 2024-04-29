@@ -1,5 +1,7 @@
 // import 'package:havatest/Classes/Hostese.dart';
 // import 'package:havatest/Classes/Pilot.dart';
+import 'package:havayolu/Classes/Personel.dart';
+
 import 'Sefer.dart';
 import 'Ucak.dart';
 import 'Hostese.dart';
@@ -26,7 +28,7 @@ class Ucus extends Sefer {
       }
     }
     ucak.pilot.Ucuslar.add(this);
-    for (Hostese host in ucak.hosteseList) {
+    for (Personel host in ucak.hosteseList) {
       host.Ucuslar.add(this);
     }
     HavaYolu.UcusList.add(this);

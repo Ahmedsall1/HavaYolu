@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'package:havayolu/Pages/Personel/Pindex.dart';
+
 import 'package:havayolu/Pages/Yonetici/Ekle/PersonelEkle.dart';
 import 'package:havayolu/Pages/Yonetici/Ekle/SeferEkle.dart';
 import 'package:havayolu/Pages/Yonetici/Ekle/SirketEkle.dart';
 import 'package:havayolu/Pages/Yonetici/Ekle/UcakEkle.dart';
 import 'package:havayolu/Pages/Yonetici/Ekle/UcusEkle.dart';
 
-import 'package:havayolu/Pages/Yonetici/Sorgula/PersonelSorgula.dart';
 
 // import 'package:havayolu/Pages/Yonetici/Duzelt&Sil/PersonelDuzelt.dart';
 // import 'package:havayolu/Pages/Yonetici/Duzelt&Sil/SeferDuzelt.dart';
@@ -49,7 +50,7 @@ class YIndex extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const PersonelEkle()),
+                          builder: (context) =>  PersonelEkle()),
                     );
                   },
                 ),
@@ -59,7 +60,7 @@ class YIndex extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SeferEkle()),
+                          builder: (context) => SeferEkle()),
                     );
                   },
                 ),
@@ -69,7 +70,7 @@ class YIndex extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SirketEkle()),
+                          builder: (context) =>  SirketEkle()),
                     );
                   },
                 ),
@@ -82,7 +83,7 @@ class YIndex extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const UcakEkle()),
+                      MaterialPageRoute(builder: (context) =>  UcakEkle()),
                     );
                   },
                 ),
@@ -91,7 +92,7 @@ class YIndex extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const UcusEkle()),
+                      MaterialPageRoute(builder: (context) => UcusEkle()),
                     );
                   },
                 ),
@@ -107,7 +108,7 @@ class YIndex extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const PersonelSorgula()),
+                          builder: (context) => Pindex()),
                     );
                   },
                 ),

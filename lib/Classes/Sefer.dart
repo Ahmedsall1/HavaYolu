@@ -12,10 +12,11 @@ class Sefer {
   late DateTime date;
   late String formattedDate;
   // 1 Oluşturcu
-  Sefer(this.KM, this.nerden, this.nereye, this.sure, this.date,this.sefer) {
+  Sefer(this.KM, this.nerden, this.nereye, this.sure, this.date, this.sefer) {
     DateFormat myFormat = DateFormat('yyyy-MM-dd');
     formattedDate = myFormat.format(date);
-
+    no = No;
+    No++;
     if (sefer) {
       HavaYolu.SeferList.add(this);
     }

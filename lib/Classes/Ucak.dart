@@ -1,3 +1,5 @@
+import 'package:havayolu/Classes/Personel.dart';
+
 import 'Pilot.dart';
 import 'Koltuk.dart';
 import 'Hostese.dart';
@@ -11,8 +13,8 @@ class Ucak {
   late int id;
   late String name="";
   // late Koltuk kolutkList[][];
-  late List<Hostese> hosteseList = [];
-  late Pilot pilot;
+  late List<Personel> hosteseList = [];
+  late Personel pilot;
   late String sirketadi;
   late String tip;
   late int harfSayisi;
@@ -36,7 +38,7 @@ class Ucak {
   }
 
   // bilgiler al
-  Ucak(this.tip, this.name, this.pilot, Hostese hostes, String sirketadi) {
+  Ucak(this.tip, this.name, this.pilot, Personel hostes, String sirketadi) {
     sayisi(tip);
     id = ID;
     ID++;

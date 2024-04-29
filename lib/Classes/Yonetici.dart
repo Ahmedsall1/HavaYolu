@@ -2,7 +2,7 @@ import 'User.dart';
 
 class Yonetici extends User {
   //  HavaYolu havayolu=new HavaYolu();
-  static Yonetici yonet =  Yonetici("Ahmed Salih");
+  static Yonetici yonet =  Yonetici("master");
 
   Yonetici(super.name);
   @override
