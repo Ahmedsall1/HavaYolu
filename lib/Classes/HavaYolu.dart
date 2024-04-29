@@ -1,3 +1,5 @@
+import 'package:havayolu/Classes/Personel.dart';
+
 import 'Yolcu.dart';
 import 'Sirket.dart';
 import 'User.dart';
@@ -109,9 +111,10 @@ class HavaYolu {
   ];
 
   static List<Sirket> SirketiList = [];
-  static List<User> PersonelList = [];
+  static List<Personel> PersonelList = [];
   static List<Yolcu> YolcuList = [];
   static List<Sefer> SeferList = [];
+  static List<User> UserList = [];
   static List<Ucak> UcakList = [];
   static List<Ucus> UcusList = [];
 

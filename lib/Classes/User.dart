@@ -5,13 +5,16 @@ abstract class User {
   late int id;
   String name;
   late String password;
+  late String email;
   
   User(this.name) {
     id = ID;
     ID++;
+    
     password =name;
     if(gettip()!=("Yolcu"))
-        HavaYolu.PersonelList.add(this);
+        HavaYolu.UserList.add(this);
+        email = name + "@gmail.com";
   }
   String getName() {
     return this.name;

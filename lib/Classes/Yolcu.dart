@@ -12,11 +12,11 @@ class Yolcu extends User {
   late List<Ucus> ucuslar = [];
   late List<Koltuk> Koltuklar = [];
   String koltuk="";
-  late String email;
+  
 
   Yolcu(super.name) {
     HavaYolu.YolcuList.add(this);
-    email = name + "@gmail.com";
+    
   }
   void git(Ucus ucus, Koltuk kol) {
     ucuslar.add(ucus);

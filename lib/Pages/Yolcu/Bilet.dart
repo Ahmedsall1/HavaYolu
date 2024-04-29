@@ -1,24 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:havayolu/Classes/Koltuk.dart';
 import 'package:havayolu/Classes/Ucus.dart';
-// import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
+import 'package:havayolu/Classes/Yolcu.dart';
+import 'package:havayolu/Pages/Yolcu/SeferBul.dart';
 
 class Bilet extends StatelessWidget {
-  Ucus ucus;
-  Koltuk koltuk;
-  Bilet({super.key, required this.ucus,required this.koltuk});
+  late Yolcu yolcu;
+  late Ucus ucus;
+  String No;
+  Bilet({
+    super.key,
+    required this.yolcu,
+    required this.No,
+    required this.ucus,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bilet Olustur'),
+        title: const Text('Yolcu'),
       ),
-      body: Column(
-          children: [
-            Text("Koltuk"+koltuk.No)
-          ],
-          ),
+      body: Center(
+        // child: ElevatedButton(
+        //   child: const Text('Bilet'),
+        //   onPressed: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => const SeferBul()),
+        //     );
+        //   },
+        // ),
+      ),
     );
   }
 }

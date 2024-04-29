@@ -16,6 +16,7 @@ class Sirketler extends StatelessWidget {
         children: [
           for (Sirket sir in HavaYolu.SirketiList)
             Card(
+              
               child: ListTile(
                 leading: Icon(Icons.apartment),
                 title: Text("ID: "+sir.id.toString()+" Adi : "+sir.name),
@@ -30,7 +31,7 @@ class Sirketler extends StatelessWidget {
                   child: Icon(Icons.edit,color:Colors.green),
                   
                 ),
-                subtitle: Text("Ucaklari : "+sir.ucakList[0].name),
+                subtitle: Text("Ucaklari : "+(!sir.ucakList.isEmpty ? sir.ucakList[0].name : "Ucak yok")),
               ),
             )
         ],

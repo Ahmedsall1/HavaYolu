@@ -150,11 +150,6 @@ class YIndex extends StatelessWidget {
                   context, MaterialPageRoute(builder: (context) => Ucuslar())),
             ),
             ListTile(
-              title: const Text("Ucaklar"),
-              onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Ucaklar())),
-            ),
-            ListTile(
               title: const Text("Yolcular"),
               onTap: () => Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Yolcular())),

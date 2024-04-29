@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Koltuk.dart';
-import 'package:havayolu/Pages/Yolcu/Bilet.dart';
+import 'package:havayolu/Pages/Yolcu/Kesinlestir.dart';
 import 'package:havayolu/Classes/Ucak.dart';
 import 'package:havayolu/Classes/Ucus.dart';
 
@@ -13,7 +13,7 @@ class KoltukSec extends StatelessWidget {
 
   KoltukSec({super.key, required this.id}) {
     ucus = HavaYolu.GetUcus(id);
-    ucus.ucak.kolutkList[4][4].durum = true;
+    // ucus.ucak.kolutkList[4][4].durum = true;
   }
 
   @override
@@ -83,7 +83,7 @@ class KoltukSec extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          Bilet(ucus: ucus, koltuk: ucus.ucak.kolutkList[row][col])),
+                          Kesinlestir(ucus: ucus, koltuk: ucus.ucak.kolutkList[row][col])),
                 );
               },
               child: Text('Sec'),

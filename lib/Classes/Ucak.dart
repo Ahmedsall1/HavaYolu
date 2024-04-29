@@ -9,7 +9,7 @@ class Ucak {
   static int ID = 1;
   static bool iss = false;
   late int id;
-  late String name;
+  late String name="";
   // late Koltuk kolutkList[][];
   late List<Hostese> hosteseList = [];
   late Pilot pilot;

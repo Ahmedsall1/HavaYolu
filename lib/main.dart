@@ -12,13 +12,13 @@ import 'package:havayolu/Classes/Ucak.dart';
 import 'package:havayolu/Classes/Sefer.dart';
 
 void main() {
-  DateTime dt = DateTime.utc(2024, 4, 28);
+  DateTime dt = DateTime.utc(DateTime.now().year, DateTime.now().month, DateTime.now().day);
   Sirket("Anadolu Jet");
   Yolcu yol = Yolcu("Muhammed");
   yol.Ytip = Yolcu.tip[1];
   Sefer s =
       Sefer(130, HavaYolu.Airports[2], HavaYolu.Airports.first, "12", dt, true);
-  Ucak uc = Ucak(HavaYolu.UcakTipi[1], "AnadoluJet", Pilot("Ahmed S"),
+  Ucak uc = Ucak(HavaYolu.UcakTipi[0], "AnadoluJet", Pilot("Ahmed S"),
       Hostese("Fatma"), "Anadolu");
   Ucus("12:30", s, uc, 300);
   Ucus("22:40", s, uc, 300);
@@ -54,7 +54,7 @@ class FirstRoute extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Pindex()),
+                  MaterialPageRoute(builder: (context) =>  Pindex()),
                 );
               },
             ),

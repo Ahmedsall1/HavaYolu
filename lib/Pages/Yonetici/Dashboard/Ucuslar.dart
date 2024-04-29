@@ -37,7 +37,7 @@ class Ucuslar extends StatelessWidget {
                     ucus.nereye +
                     " " +
                     ucus.KM.toString() +
-                    " KM"+ucus.i.toString()+" P: "+ucus.ucak.pilot.name +" Ş: "+ucus.ucak.name),
+                    " KM "+" P: "+ucus.ucak.pilot.name +" Ş: "+ucus.ucak.name),
               ),
             )
         ],
