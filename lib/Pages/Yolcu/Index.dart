@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:havayolu/Pages/Yolcu/KayitOl.dart';
 import 'package:havayolu/Pages/Yolcu/SeferBul.dart';
 
 class Index extends StatelessWidget {
@@ -11,7 +12,10 @@ class Index extends StatelessWidget {
         title: const Text('Yolcu'),
       ),
       body: Center(
-        child: ElevatedButton(
+        
+        child: Column(
+          children: [
+            ElevatedButton(
           child: const Text('Sefer Bul'),
           onPressed: () {
             Navigator.push(
@@ -19,6 +23,18 @@ class Index extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const SeferBul()),
             );
           },
+          
+        ),
+        ElevatedButton(
+          child: const Text('Kayit Ol'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => KayitOl()),
+            );
+          },
+        ),
+          ],
         ),
       ),
     );

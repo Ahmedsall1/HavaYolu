@@ -4,15 +4,17 @@ import 'package:havayolu/Classes/Koltuk.dart';
 import 'package:havayolu/Classes/Ucus.dart';
 import 'package:havayolu/Classes/Yolcu.dart';
 import 'package:havayolu/Pages/Yolcu/Biletim.dart';
+import 'package:havayolu/Pages/Yolcu/Biletlerim.dart';
 import 'package:havayolu/Pages/Yolcu/Index.dart';
+import 'package:havayolu/Pages/Yolcu/KayitOl.dart';
 // import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 
 class Kesinlestir extends StatelessWidget {
   Ucus ucus;
   Koltuk koltuk;
   late Yolcu yolcu;
-  late String first;
-  late String last;
+  String first="";
+  String last="";
   late String password = "";
   late String email;
   Kesinlestir({super.key, required this.ucus, required this.koltuk});
@@ -20,6 +22,7 @@ class Kesinlestir extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       appBar: AppBar(
         title: const Text('Bilet Olustur'),
       ),
@@ -240,9 +243,9 @@ class Kesinlestir extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => Biletim(
+                            builder: (_) => Biletlerim(
                                   yolcu: yolcu,
-                                  no: koltuk.No,
+                                  koltuk: koltuk,
                                   ucus: ucus,
                                 )));
                   },
@@ -252,6 +255,7 @@ class Kesinlestir extends StatelessWidget {
                   ),
                 ),
               ),
+
             ],
           )
         ],

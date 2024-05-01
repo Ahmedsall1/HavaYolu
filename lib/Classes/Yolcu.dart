@@ -1,5 +1,5 @@
 import 'package:havayolu/Classes/Bilet.dart';
-import 'package:havayolu/Pages/Yolcu/Biletim.dart';
+
 
 import 'User.dart';
 import 'HavaYolu.dart';
