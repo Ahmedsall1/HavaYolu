@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:havayolu/Classes/Bilet.dart';
 import 'package:havayolu/Classes/Koltuk.dart';
 import 'package:havayolu/Classes/Ucus.dart';
+import 'package:havayolu/Classes/Yolcu.dart';
+import 'package:havayolu/Pages/Yolcu/Biletim.dart';
 import 'package:havayolu/Pages/Yolcu/Index.dart';
 // import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 
 class Kesinlestir extends StatelessWidget {
   Ucus ucus;
   Koltuk koltuk;
+  late Yolcu yolcu;
   late String first;
   late String last;
   late String password = "";
@@ -21,6 +25,7 @@ class Kesinlestir extends StatelessWidget {
       ),
       body: Column(
         children: [
+          //////////////////////////////// Bilgiler ////////////////////////////////////////////////////////
           Row(
             children: [
               Card(
@@ -28,7 +33,7 @@ class Kesinlestir extends StatelessWidget {
                 elevation: 10.0,
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
-                  child: Text("Ucret : " + koltuk.ucret.toString()+" TL"),
+                  child: Text("Ucret : " + koltuk.ucret.toString() + " TL"),
                 ),
               ),
               Card(
@@ -64,7 +69,7 @@ class Kesinlestir extends StatelessWidget {
                 elevation: 10.0,
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
-                  child: Text( ucus.formattedDate),
+                  child: Text(ucus.formattedDate),
                 ),
               ),
               Card(
@@ -145,6 +150,7 @@ class Kesinlestir extends StatelessWidget {
               ),
             ],
           ),
+          //////////////////////////////// Yolcu Bilgileri formu ////////////////////////////////////////////////////////
           Column(
             children: [
               Row(
@@ -157,10 +163,10 @@ class Kesinlestir extends StatelessWidget {
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width *
                           0.4, // Adjust the width as needed
-                      child:  TextField(
+                      child: TextField(
                         onChanged: (value) {
-                    last = value;
-                  },
+                          first = value;
+                        },
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'First Name',
@@ -175,10 +181,10 @@ class Kesinlestir extends StatelessWidget {
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width *
                           0.4, // Adjust the width as needed
-                      child:  TextField(
+                      child: TextField(
                         onChanged: (value) {
-                    last = value;
-                  },
+                          last = value;
+                        },
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Last Name',
@@ -198,7 +204,6 @@ class Kesinlestir extends StatelessWidget {
                   },
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      
                       labelText: 'Email',
                       hintText: 'Enter valid email id as abc@gmail.com'),
                 ),
@@ -227,16 +232,26 @@ class Kesinlestir extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () {
+                    yolcu = Yolcu(first + last);
+                    this.yolcu.email = email;
+                    this.password = password;
+                    this.yolcu.koltuk = this.koltuk.No;
+                    yolcu.biletlerim.add(Bilet(koltuk, ucus, yolcu));
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => Index()));
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => Biletim(
+                                  yolcu: yolcu,
+                                  no: koltuk.No,
+                                  ucus: ucus,
+                                )));
                   },
-                  child: Text(
+                  child: const Text(
                     'Kesinlestir',
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ),
               ),
-              
             ],
           )
         ],

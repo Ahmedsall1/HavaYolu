@@ -3,14 +3,14 @@ import 'package:havayolu/Classes/Ucus.dart';
 import 'package:havayolu/Classes/Yolcu.dart';
 import 'package:havayolu/Pages/Yolcu/SeferBul.dart';
 
-class Bilet extends StatelessWidget {
+class Biletim extends StatelessWidget {
   late Yolcu yolcu;
   late Ucus ucus;
-  String No;
-  Bilet({
+  String no;
+  Biletim({
     super.key,
     required this.yolcu,
-    required this.No,
+    required this.no,
     required this.ucus,
   });
 
@@ -21,15 +21,14 @@ class Bilet extends StatelessWidget {
         title: const Text('Yolcu'),
       ),
       body: Center(
-        // child: ElevatedButton(
-        //   child: const Text('Bilet'),
-        //   onPressed: () {
-        //     Navigator.push(
-        //       context,
-        //       MaterialPageRoute(builder: (context) => const SeferBul()),
-        //     );
-        //   },
-        // ),
+        child: Column(
+          children: [
+            Text(yolcu.name),
+            Text(ucus.nerden),
+            Text(no),
+            Image.asset('images/Qr.png'),
+        ],
+        )
       ),
     );
   }

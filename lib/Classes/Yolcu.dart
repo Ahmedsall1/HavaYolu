@@ -1,28 +1,20 @@
+import 'package:havayolu/Classes/Bilet.dart';
+import 'package:havayolu/Pages/Yolcu/Biletim.dart';
 
-
-import 'Ucus.dart';
 import 'User.dart';
 import 'HavaYolu.dart';
-import 'Koltuk.dart';
 
 class Yolcu extends User {
   static var tip = ["Standart", "VIP"];
   String Ytip = tip[0];
   late int sira, harf;
-  late List<Ucus> ucuslar = [];
-  late List<Koltuk> Koltuklar = [];
-  String koltuk="";
-  
+  List<Bilet> biletlerim=[];
+  String koltuk = "";
 
   Yolcu(super.name) {
     HavaYolu.YolcuList.add(this);
-    
   }
-  void git(Ucus ucus, Koltuk kol) {
-    ucuslar.add(ucus);
-    Koltuklar.add(kol);
-    koltuk = kol.No;
-  }
+
 
   @override
   String gettip() {

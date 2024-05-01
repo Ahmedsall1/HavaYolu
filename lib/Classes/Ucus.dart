@@ -4,7 +4,7 @@ import 'package:havayolu/Classes/Personel.dart';
 
 import 'Sefer.dart';
 import 'Ucak.dart';
-import 'Hostese.dart';
+// import 'Hostese.dart';
 import 'HavaYolu.dart';
 
 class Ucus extends Sefer {

@@ -1,8 +1,8 @@
 import 'package:havayolu/Classes/Personel.dart';
 
-import 'Pilot.dart';
+// import 'Pilot.dart';
 import 'Koltuk.dart';
-import 'Hostese.dart';
+// import 'Hostese.dart';
 import 'HavaYolu.dart';
 import 'Sirket.dart';
 import 'Yolcu.dart';
