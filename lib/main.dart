@@ -31,6 +31,7 @@ void main() {
 }
 
 class FirstRoute extends StatelessWidget {
+  
   const FirstRoute({super.key});
 
   @override
@@ -47,7 +48,7 @@ class FirstRoute extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Index()),
+                  MaterialPageRoute(builder: (context) =>  Index()),
                 );
               },
             ),

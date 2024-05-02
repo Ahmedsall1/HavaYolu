@@ -6,18 +6,19 @@ abstract class User {
   String name;
   late String password;
   late String email;
-  
+
   User(this.name) {
     id = ID;
     ID++;
-    
-    password =name;
-    if(gettip()!=("Yolcu"))
-        HavaYolu.UserList.add(this);
-        email = name + "@gmail.com";
+
+    password = name;
+    email = "$name@gmail.com";
+    if (gettip() != ("Yolcu")) {
+      HavaYolu.UserList.add(this);
+    }
   }
   String getName() {
-    return this.name;
+    return name;
   }
 
   void setName(String name) {

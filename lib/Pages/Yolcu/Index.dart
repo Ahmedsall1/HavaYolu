@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:havayolu/Pages/Yolcu/KayitOl.dart';
+import 'package:havayolu/Classes/Yolcu.dart';
 import 'package:havayolu/Pages/Yolcu/SeferBul.dart';
 
+// ignore: must_be_immutable
 class Index extends StatelessWidget {
-  const Index({super.key});
+  Index({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,28 +13,17 @@ class Index extends StatelessWidget {
         title: const Text('Yolcu'),
       ),
       body: Center(
-        
         child: Column(
           children: [
             ElevatedButton(
-          child: const Text('Sefer Bul'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SeferBul()),
-            );
-          },
-          
-        ),
-        ElevatedButton(
-          child: const Text('Kayit Ol'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => KayitOl()),
-            );
-          },
-        ),
+              child: const Text('Sefer Bul'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SeferBul()),
+                );
+              },
+            ),
           ],
         ),
       ),

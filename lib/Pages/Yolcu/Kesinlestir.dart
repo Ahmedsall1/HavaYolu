@@ -3,18 +3,16 @@ import 'package:havayolu/Classes/Bilet.dart';
 import 'package:havayolu/Classes/Koltuk.dart';
 import 'package:havayolu/Classes/Ucus.dart';
 import 'package:havayolu/Classes/Yolcu.dart';
-import 'package:havayolu/Pages/Yolcu/Biletim.dart';
+import 'package:havayolu/Pages/Shared/MyCard.dart';
 import 'package:havayolu/Pages/Yolcu/Biletlerim.dart';
-import 'package:havayolu/Pages/Yolcu/Index.dart';
-import 'package:havayolu/Pages/Yolcu/KayitOl.dart';
-// import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 
+// ignore: must_be_immutable
 class Kesinlestir extends StatelessWidget {
   Ucus ucus;
   Koltuk koltuk;
   late Yolcu yolcu;
-  String first="";
-  String last="";
+  String first = "";
+  String last = "";
   late String password = "";
   late String email;
   Kesinlestir({super.key, required this.ucus, required this.koltuk});
@@ -22,7 +20,7 @@ class Kesinlestir extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset : false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Bilet Olustur'),
       ),
@@ -31,129 +29,66 @@ class Kesinlestir extends StatelessWidget {
           //////////////////////////////// Bilgiler ////////////////////////////////////////////////////////
           Row(
             children: [
-              Card(
-                color: Colors.teal,
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Ucret : " + koltuk.ucret.toString() + " TL"),
-                ),
-              ),
-              Card(
-                color: Colors.teal,
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Koltuk : " + koltuk.No),
-                ),
-              ),
-              Card(
-                color: Colors.teal,
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Sure : " + ucus.sure),
-                ),
+              MyCard(
+                  text: "Ucret : ${koltuk.ucret} TL",
+                  color: const Color.fromARGB(255, 0, 150, 122)),
+              MyCard(
+                  text: "Koltuk : ${koltuk.No}",
+                  color: const Color.fromARGB(255, 0, 150, 122)),
+              MyCard(
+                  text: "Sure : ${ucus.sure}",
+                  color: const Color.fromARGB(255, 0, 150, 122)),
+            ],
+          ),
+          Row(
+            children: [
+              MyCard(
+                  text: "Saati : ${ucus.saat}",
+                  color: const Color.fromARGB(255, 0, 80, 150)),
+              MyCard(
+                  text: ucus.formattedDate,
+                  color: const Color.fromARGB(255, 0, 80, 150)),
+              MyCard(
+                  text: "Koltuk : ${koltuk.koltuktipi}",
+                  color: const Color.fromARGB(255, 0, 80, 150)),
+            ],
+          ),
+          Row(
+            children: [
+              MyCard(
+                  text: "Ucus No : ${ucus.i * 1433}",
+                  color: const Color.fromARGB(255, 0, 150, 122)),
+              MyCard(
+                  text: "Nerden : ${ucus.nerden}",
+                  color: const Color.fromARGB(255, 0, 150, 122)),
+            ],
+          ),
+          Row(
+            children: [
+              MyCard(
+                  text: "Nereye : ${ucus.nereye}",
+                  color: const Color.fromARGB(255, 0, 80, 150)),
+              MyCard(
+                text: "Ucak : ${ucus.ucak.name}",
+                color: const Color.fromARGB(255, 0, 80, 150),
               ),
             ],
           ),
           Row(
             children: [
-              Card(
-                color: const Color.fromARGB(255, 0, 80, 150),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Saati : " + ucus.saat),
-                ),
-              ),
-              Card(
-                color: const Color.fromARGB(255, 0, 80, 150),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text(ucus.formattedDate),
-                ),
-              ),
-              Card(
-                color: const Color.fromARGB(255, 0, 80, 150),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Koltuk : " + koltuk.koltuktipi),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Card(
-                color: Color.fromARGB(255, 0, 150, 122),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Nerden : " + ucus.nerden),
-                ),
-              ),
-              Card(
-                color: Color.fromARGB(255, 0, 150, 122),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Ucus No : " + (ucus.i * 1433).toString()),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Card(
-                color: const Color.fromARGB(255, 0, 80, 150),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Nereye : " + ucus.nereye),
-                ),
-              ),
-              Card(
-                color: const Color.fromARGB(255, 0, 80, 150),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Ucak : " + ucus.ucak.name),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Card(
-                color: Color.fromARGB(255, 0, 150, 122),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Sirket : " + ucus.ucak.sirketadi),
-                ),
-              ),
-              Card(
-                color: Color.fromARGB(255, 0, 150, 122),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Pilot : " + ucus.ucak.pilot.name),
-                ),
-              ),
-              Card(
-                color: Color.fromARGB(255, 0, 150, 122),
-                elevation: 10.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Ucak : " + ucus.ucak.tip),
-                ),
-              ),
+              MyCard(
+                  text: "Sirket : ${ucus.ucak.sirketadi}",
+                  color: const Color.fromARGB(255, 0, 150, 122)),
+              MyCard(
+                  text: "Pilot : ${ucus.ucak.pilot.name}",
+                  color: const Color.fromARGB(255, 0, 150, 122)),
+              MyCard(
+                  text: "Ucak : ${ucus.ucak.tip}",
+                  color: const Color.fromARGB(255, 0, 150, 122)),
             ],
           ),
           //////////////////////////////// Yolcu Bilgileri formu ////////////////////////////////////////////////////////
+          ///
           Column(
             children: [
               Row(
@@ -200,12 +135,12 @@ class Kesinlestir extends StatelessWidget {
               ),
               Padding(
                 //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
                   onChanged: (value) {
                     email = value;
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Email',
                       hintText: 'Enter valid email id as abc@gmail.com'),
@@ -220,7 +155,7 @@ class Kesinlestir extends StatelessWidget {
                   onChanged: (value) {
                     password = value;
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Password',
                     hintText: 'Enter secure password',
@@ -231,23 +166,18 @@ class Kesinlestir extends StatelessWidget {
                 height: 50,
                 width: 250,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 0, 150, 122),
+                    color: const Color.fromARGB(255, 0, 150, 122),
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () {
                     yolcu = Yolcu(first + last);
-                    this.yolcu.email = email;
-                    this.password = password;
-                    this.yolcu.koltuk = this.koltuk.No;
+                    yolcu.email = email;
+                    yolcu.password = password;
                     yolcu.biletlerim.add(Bilet(koltuk, ucus, yolcu));
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => Biletlerim(
-                                  yolcu: yolcu,
-                                  koltuk: koltuk,
-                                  ucus: ucus,
-                                )));
+                            builder: (_) => Biletlerim(yolcu: yolcu)));
                   },
                   child: const Text(
                     'Kesinlestir',
@@ -255,9 +185,8 @@ class Kesinlestir extends StatelessWidget {
                   ),
                 ),
               ),
-
             ],
-          )
+          ),
         ],
       ),
     );

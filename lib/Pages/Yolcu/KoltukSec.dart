@@ -13,7 +13,6 @@ class KoltukSec extends StatelessWidget {
 
   KoltukSec({super.key, required this.id}) {
     ucus = HavaYolu.GetUcus(id);
-    // ucus.ucak.kolutkList[4][4].durum = true;
   }
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_search/dropdown_search.dart';
+import 'package:havayolu/Classes/Yolcu.dart';
 import 'package:havayolu/Pages/Yolcu/UcusSec.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Sefer.dart';
@@ -9,7 +10,7 @@ var nereye = " ";
 DateTime tarih = DateTime.now();
 
 class SeferBul extends StatefulWidget {
-  const SeferBul({Key? key}) : super(key: key);
+  SeferBul({Key? key}) : super(key: key);
 
   @override
   _SeferBulState createState() => _SeferBulState();
