@@ -4,10 +4,9 @@ import 'package:havayolu/Classes/Hostese.dart';
 import 'package:havayolu/Classes/Pilot.dart';
 import 'package:havayolu/Classes/Sirket.dart';
 import 'package:havayolu/Classes/Yolcu.dart';
-import 'package:havayolu/Pages/Yolcu/Index.dart';
 import 'package:havayolu/Pages/Personel/Pindex.dart';
+import 'package:havayolu/Pages/Yolcu/SeferBul.dart';
 import 'package:havayolu/Pages/Yonetici/Login.dart';
-import 'package:havayolu/Pages/Yonetici/YIndex.dart';
 import 'package:havayolu/Classes/Ucus.dart';
 import 'package:havayolu/Classes/Ucak.dart';
 import 'package:havayolu/Classes/Sefer.dart';
@@ -19,8 +18,8 @@ void main() {
   Yolcu yol = Yolcu("Muhammed");
   yol.Ytip = Yolcu.tip[1];
   Sefer s =
-      Sefer(130, HavaYolu.Airports[2], HavaYolu.Airports.first, "12", dt, true);
-  Ucak uc = Ucak(HavaYolu.UcakTipi[0], "AnadoluJet", Pilot("Ahmed S"),
+      Sefer(130, HavaYolu.Airports[0], HavaYolu.Airports[1], "12:30", dt, true);
+  Ucak uc = Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
       Hostese("Fatma"), "Anadolu");
   Ucus("12:30", s, uc, 300);
   Ucus("22:40", s, uc, 300);
@@ -43,12 +42,13 @@ class FirstRoute extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
+            Image.asset('images/logo.png'),
             ElevatedButton(
               child: const Text('Yoluc'),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  Index()),
+                  MaterialPageRoute(builder: (context) =>  SeferBul()),
                 );
               },
             ),

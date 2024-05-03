@@ -89,103 +89,126 @@ class Kesinlestir extends StatelessWidget {
           ),
           //////////////////////////////// Yolcu Bilgileri formu ////////////////////////////////////////////////////////
           ///
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.spaceEvenly, // Adjust as needed
+          ///
+          Card(
+            color: const Color.fromARGB(255, 0, 80, 150),
+            elevation: 20.0,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 5, right: 5, top: 20, bottom: 10),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width *
-                          0.4, // Adjust the width as needed
-                      child: TextField(
-                        onChanged: (value) {
-                          first = value;
-                        },
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: 'First Name',
-                          hintText: 'Enter first name',
+                  Row(
+                    mainAxisAlignment:
+                        MainAxisAlignment.spaceEvenly, // Adjust as needed
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 5, right: 5, top: 20, bottom: 10),
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width *
+                              0.4, // Adjust the width as needed
+                          child: TextField(
+                            onChanged: (value) {
+                              first = value;
+                            },
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'First Name',
+                              hintText: 'Enter first name',
+                              labelStyle:
+                                  TextStyle(fontSize: 16, color: Colors.white),
+                              hintStyle:
+                                  TextStyle(fontSize: 16, color: Colors.white),
+                            ),
+                          ),
                         ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 5, right: 5, top: 20, bottom: 10),
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width *
+                              0.4, // Adjust the width as needed
+                          child: TextField(
+                            onChanged: (value) {
+                              last = value;
+                            },
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Last Name',
+                              hintText: 'Enter last name',
+                              labelStyle:
+                                  TextStyle(fontSize: 16, color: Colors.white),
+                              hintStyle:
+                                  TextStyle(fontSize: 16, color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: TextField(
+                      onChanged: (value) {
+                        email = value;
+                      },
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Email',
+                        hintText: 'Enter valid email id as abc@gmail.com',
+                        labelStyle:
+                            TextStyle(fontSize: 16, color: Colors.white),
+                        hintStyle: TextStyle(fontSize: 16, color: Colors.white),
                       ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        left: 5, right: 5, top: 20, bottom: 10),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width *
-                          0.4, // Adjust the width as needed
-                      child: TextField(
-                        onChanged: (value) {
-                          last = value;
-                        },
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: 'Last Name',
-                          hintText: 'Enter last name',
-                        ),
+                        left: 15.0, right: 15.0, top: 15, bottom: 30),
+                    //padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: TextField(
+                      obscureText: true,
+                      onChanged: (value) {
+                        password = value;
+                      },
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Password',
+                        hintText: 'Enter secure password',
+                        labelStyle:
+                            TextStyle(fontSize: 16, color: Colors.white),
+                        hintStyle: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    width: 250,
+                    decoration: BoxDecoration(
+                        color: const Color.fromRGBO(253, 222, 85, 1),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: TextButton(
+                      onPressed: () {
+                        yolcu = Yolcu(first + last);
+                        yolcu.email = email;
+                        yolcu.password = password;
+                        yolcu.biletlerim.add(Bilet(koltuk, ucus, yolcu));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => Biletlerim(yolcu: yolcu)));
+                      },
+                      child: const Text(
+                        'Kesinlestir',
+                        style: TextStyle(color: Colors.white, fontSize: 25),
                       ),
                     ),
                   ),
                 ],
               ),
-              Padding(
-                //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: TextField(
-                  onChanged: (value) {
-                    email = value;
-                  },
-                  decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Email',
-                      hintText: 'Enter valid email id as abc@gmail.com'),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 15.0, right: 15.0, top: 15, bottom: 30),
-                //padding: EdgeInsets.symmetric(horizontal: 15),
-                child: TextField(
-                  obscureText: true,
-                  onChanged: (value) {
-                    password = value;
-                  },
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter secure password',
-                  ),
-                ),
-              ),
-              Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 0, 150, 122),
-                    borderRadius: BorderRadius.circular(20)),
-                child: TextButton(
-                  onPressed: () {
-                    yolcu = Yolcu(first + last);
-                    yolcu.email = email;
-                    yolcu.password = password;
-                    yolcu.biletlerim.add(Bilet(koltuk, ucus, yolcu));
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => Biletlerim(yolcu: yolcu)));
-                  },
-                  child: const Text(
-                    'Kesinlestir',
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         ],
       ),

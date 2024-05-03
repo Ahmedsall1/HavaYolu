@@ -18,50 +18,49 @@ class KoltukSec extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Koltuk Sec'),
-      ),
-      body: GridView.count(
-        crossAxisCount: ucus.ucak.harfSayisi,
-        children: List.generate(
-          (ucus.ucak.kolutkList.length - 1) * ucus.ucak.kolutkList.first.length,
-          (index) {
-            int rowIndex = (index ~/ ucus.ucak.kolutkList.first.length) + 1;
-            int colIndex = index % ucus.ucak.kolutkList.first.length;
-            String chairNo = ucus.ucak.kolutkList[rowIndex][colIndex].No;
-            bool isChairFull = ucus.ucak.kolutkList[rowIndex][colIndex].durum;
-
-            return Center(
-              child: isChairFull
-                  ? _buildDisabledChair(
-                      chairNo) // Render disabled chair if it's already full
-                  : GestureDetector(
-                      onTap: () {
-                        // Handle chair selection logic here
-                        print('Chair No: $chairNo selected');
-                        _showDialog(context, chairNo, rowIndex, colIndex);
-                      },
-                      child:
-                          _buildEnabledChair(chairNo), // Render enabled chair
-                    ),
-            );
-          },
+        appBar: AppBar(
+          title: const Text('Koltuk Sec'),
         ),
-      ),
-      // Center(
-      //   child: ElevatedButton(
-      //     child: const Text('Bilet'),
-      //     onPressed: () {
-      //       Navigator.push(
-      //         context,
-      //         MaterialPageRoute(builder: (context) => const Bilet()),
-      //       );
-      //     },
-      //   ),
-      // ),
-    );
-  }
+        body: Column(
+          children: [
+            Image.asset('images/UcakB.png'),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: ucus.ucak.harfSayisi,
+                children: List.generate(
+                  (ucus.ucak.kolutkList.length - 1) *
+                      ucus.ucak.kolutkList.first.length,
+                  (index) {
+                    int rowIndex =
+                        (index ~/ ucus.ucak.kolutkList.first.length) + 1;
+                    int colIndex = index % ucus.ucak.kolutkList.first.length;
+                    String chairNo =
+                        ucus.ucak.kolutkList[rowIndex][colIndex].No;
+                    bool isChairFull =
+                        ucus.ucak.kolutkList[rowIndex][colIndex].durum;
 
+                    return Center(
+                      child: isChairFull
+                          ? _buildDisabledChair(chairNo)
+                          : GestureDetector(
+                              onTap: () {
+                                // Handle chair selection logic here
+                                print('Chair No: $chairNo selected');
+                                _showDialog(
+                                    context, chairNo, rowIndex, colIndex);
+                              },
+                              child: _buildEnabledChair(chairNo),
+                            ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            Image.asset('images/UcakS.png')
+          ],
+        ));
+  }
+  
   void _showDialog(BuildContext context, String No, int row, int col) {
     showDialog(
       context: context,
@@ -81,8 +80,8 @@ class KoltukSec extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>
-                          Kesinlestir(ucus: ucus, koltuk: ucus.ucak.kolutkList[row][col])),
+                      builder: (context) => Kesinlestir(
+                          ucus: ucus, koltuk: ucus.ucak.kolutkList[row][col])),
                 );
               },
               child: Text('Sec'),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_search/dropdown_search.dart';
-import 'package:havayolu/Classes/Yolcu.dart';
+import 'package:flutter/widgets.dart';
+// import 'package:havayolu/Classes/Yolcu.dart';
 import 'package:havayolu/Pages/Yolcu/UcusSec.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
-import 'package:havayolu/Classes/Sefer.dart';
+// import 'package:havayolu/Classes/Sefer.dart';
 
 var nerden = " ";
 var nereye = " ";
@@ -31,7 +32,6 @@ class _SeferBulState extends State<SeferBul> {
       setState(() {
         selectedDate = picked;
         tarih = selectedDate;
-        print(tarih);
       });
     }
   }
@@ -42,75 +42,175 @@ class _SeferBulState extends State<SeferBul> {
       appBar: AppBar(
         title: const Text('Sefer Bul'),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            // const Nerden(),
-            // const Nereye(),
-            Text("${selectedDate.toLocal()}".split(' ')[0]),
-            const SizedBox(
-              height: 20.0,
-            ),
-            DropdownSearch<String>(
-              selectedItem: HavaYolu.Airports[0],
-              dropdownBuilder: (context, sleectedItem) {
-                nerden = sleectedItem.toString();
-                return Text(sleectedItem.toString());
-              },
-              items: HavaYolu.Airports,
-              popupProps: PopupProps.bottomSheet(
-                showSelectedItems: true,
-                isFilterOnline: true,
-                showSearchBox: true,
-              ),
-            ),
-            DropdownSearch<String>(
-              selectedItem: HavaYolu.Airports[1],
-              dropdownBuilder: (context, sleectedItem) {
-                nereye = sleectedItem.toString();
-                print(sleectedItem.toString());
-                return Text(sleectedItem.toString());
-              },
-              items: HavaYolu.Airports,
-              popupProps: PopupProps.bottomSheet(
-                showSelectedItems: true,
-                isFilterOnline: true,
-                showSearchBox: true,
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () => _selectDate(context),
-              child: const Text('Select date'),
-            ),
-            // TextField(
-            //   controller: dateController, //editing controller of this TextField
-            //   decoration: const InputDecoration(
-            //         icon: Icon(Icons.calendar_today), //icon of text field
-            //        labelText: "Enter Date" //label text of field
+      body: Column(
+        children: [
+          // const Nerden(),
+          // const Nereye(),
 
-            // ),
-            // readOnly: true,  // when true user cannot edit text
-            // onTap: () async {
-            //       //when click we have to show the datepicker
-            // }
-            // ),
-            ElevatedButton(
-              child: const Text('Ucus Sec'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => UcusSec(
-                      nerden: nerden,
-                      nereye: nereye,
-                      tarih: tarih,
+          Card(
+            color: const Color.fromARGB(255, 0, 80, 150),
+            elevation: 20.0,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      Image.asset(
+                        'images/Ucus.png',
+                        width: 30,
+                        height: 30,
+                      ),
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      const Text(
+                        "Nerden",
+                        style: TextStyle(fontSize: 25.0, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  DropdownSearch<String>(
+                    selectedItem: HavaYolu.Airports[0],
+                    dropdownBuilder: (context, sleectedItem) {
+                      nerden = sleectedItem.toString();
+
+                      return Text(sleectedItem.toString(),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                          ));
+                    },
+                    items: HavaYolu.Airports,
+                    popupProps: const PopupProps.bottomSheet(
+                      showSelectedItems: true,
+                      isFilterOnline: true,
+                      showSearchBox: true,
+                      textStyle: TextStyle(color: Colors.white),
+                    ),
+                    dropdownSearchDecoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 5.0,
+                            color: Colors.white), // Set border color to white
+                      ),
                     ),
                   ),
-                );
-              },
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      Image.asset(
+                        'images/Inis.png',
+                        width: 30,
+                        height: 30,
+                      ),
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      const Text(
+                        "Nereye",
+                        style: TextStyle(fontSize: 25.0, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  DropdownSearch<String>(
+                    selectedItem: HavaYolu.Airports[1],
+                    dropdownBuilder: (context, sleectedItem) {
+                      nereye = sleectedItem.toString();
+                      return Text(sleectedItem.toString(),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                          ));
+                    },
+                    items: HavaYolu.Airports,
+                    popupProps: const PopupProps.bottomSheet(
+                      showSelectedItems: true,
+                      isFilterOnline: true,
+                      showSearchBox: true,
+                    ),
+                    dropdownSearchDecoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 5.0,
+                            color: Colors.white), // Set border color to white
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                          onPressed: () => _selectDate(context),
+                          child: Row(
+                            children: [
+                              const Icon(
+                                Icons.date_range_outlined,
+                                color: Color.fromARGB(255, 0, 80, 150),
+                              ),
+                              Text(
+                                ' ${selectedDate.toLocal().day}/${selectedDate.toLocal().month}/${selectedDate.toLocal().year}',
+                                style: const TextStyle(
+                                    fontSize: 20.0,
+                                    color: Color.fromARGB(255, 0, 80, 150)),
+                              ),
+                            ],
+                          )),
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:const Color.fromRGBO(253, 222, 85,
+                              1), // Set background color to RGB(253, 222, 85)
+                        ),
+                        child: const Text(
+                          'Ucus Sec',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 0, 80, 150),
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UcusSec(
+                                nerden: nerden,
+                                nereye: nereye,
+                                tarih: tarih,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -135,7 +235,6 @@ class _DropdownMenuExampleState extends State<Nerden> {
         setState(() {
           dropdownValue = value!;
           nerden = value;
-          print(nerden);
         });
       },
       dropdownMenuEntries:
@@ -165,7 +264,6 @@ class Air extends State<Nereye> {
         setState(() {
           dropdownValue = value!;
           nereye = value;
-          print(nereye);
         });
       },
       dropdownMenuEntries:
