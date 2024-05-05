@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/widgets.dart';
+import 'package:havayolu/Pages/Yolcu/Sorgula.dart';
 // import 'package:havayolu/Classes/Yolcu.dart';
 import 'package:havayolu/Pages/Yolcu/UcusSec.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
@@ -40,10 +41,15 @@ class _SeferBulState extends State<SeferBul> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sefer Bul'),
-
+        title: const Text(
+          'Sefer Bul',
+          style: TextStyle(
+            color: Color(0xFF005096),
+            fontFamily: "Times New Roman",
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
-
       body: Column(
         children: [
           // const Nerden(),
@@ -74,7 +80,12 @@ class _SeferBulState extends State<SeferBul> {
                       ),
                       const Text(
                         "Nerden",
-                        style: TextStyle(fontSize: 25.0, color: Colors.white),
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          color: Colors.white,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ],
                   ),
@@ -88,8 +99,10 @@ class _SeferBulState extends State<SeferBul> {
 
                       return Text(sleectedItem.toString(),
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Color(0xFFFDDE55),
                             fontSize: 16.0,
+                            fontFamily: "Times New Roman",
+                            fontWeight: FontWeight.w600,
                           ));
                     },
                     items: HavaYolu.Airports,
@@ -125,7 +138,12 @@ class _SeferBulState extends State<SeferBul> {
                       ),
                       const Text(
                         "Nereye",
-                        style: TextStyle(fontSize: 25.0, color: Colors.white),
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          color: Colors.white,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ],
                   ),
@@ -138,7 +156,9 @@ class _SeferBulState extends State<SeferBul> {
                       nereye = sleectedItem.toString();
                       return Text(sleectedItem.toString(),
                           style: const TextStyle(
-                            color: Colors.white,
+                            fontFamily: "Times New Roman",
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFFFDDE55),
                             fontSize: 16.0,
                           ));
                     },
@@ -173,6 +193,8 @@ class _SeferBulState extends State<SeferBul> {
                               Text(
                                 ' ${selectedDate.toLocal().day}/${selectedDate.toLocal().month}/${selectedDate.toLocal().year}',
                                 style: const TextStyle(
+                                    fontFamily: "Times New Roman",
+                                    fontWeight: FontWeight.w600,
                                     fontSize: 20.0,
                                     color: Color.fromARGB(255, 0, 80, 150)),
                               ),
@@ -189,6 +211,8 @@ class _SeferBulState extends State<SeferBul> {
                         child: const Text(
                           'Ucus Sec',
                           style: TextStyle(
+                            fontFamily: "Times New Roman",
+                            fontWeight: FontWeight.w600,
                             color: Color.fromARGB(255, 0, 80, 150),
                             fontSize: 20.0,
                           ),
@@ -211,6 +235,29 @@ class _SeferBulState extends State<SeferBul> {
                 ],
               ),
             ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(
+                  0xFFFDDE55), // Set background color to RGB(253, 222, 85)
+            ),
+            child: const Text(
+              'Yolcu Girişi',
+              style: TextStyle(
+                fontFamily: "Times New Roman",
+                fontWeight: FontWeight.w600,
+                color: Color.fromARGB(255, 0, 80, 150),
+                fontSize: 20.0,
+              ),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Sorgula(),
+                ),
+              );
+            },
           ),
         ],
       ),

@@ -19,11 +19,85 @@ class KoltukSec extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Koltuk Sec'),
+          title: const Text(
+            'Koltuk Seç',
+            style: TextStyle(
+              color: Color(0xFF005096),
+              fontFamily: "Times New Roman",
+              fontWeight: FontWeight.w600,
+            ),
+          ),
         ),
         body: Column(
           children: [
-            Image.asset('images/UcakB.png'),
+            const Card(
+              color: const Color.fromARGB(255, 0, 80, 150),
+              elevation: 20.0,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(
+                          "Standart",
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontSize: 25,
+                            fontFamily: "Times New Roman",
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        Text(
+                          "Business",
+                          style: TextStyle(
+                            color: Color(0xFFFDDE55),
+                            fontSize: 20,
+                            fontFamily: "Times New Roman",
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        Text(
+                          "Ekonomik",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 20,
+                            fontFamily: "Times New Roman",
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 150.0,
+                        ),
+                        Text(
+                          "Dolu",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 179, 0, 0),
+                            fontSize: 25,
+                            fontFamily: "Times New Roman",
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // Image.asset('images/UcakB.png'),
             Expanded(
               child: GridView.count(
                 crossAxisCount: ucus.ucak.harfSayisi,
@@ -49,18 +123,18 @@ class KoltukSec extends StatelessWidget {
                                 _showDialog(
                                     context, chairNo, rowIndex, colIndex);
                               },
-                              child: _buildEnabledChair(chairNo),
+                              child: _buildEnabledChair(chairNo,ucus.ucak.kolutkList[rowIndex][colIndex]),
                             ),
                     );
                   },
                 ),
               ),
             ),
-            Image.asset('images/UcakS.png')
+            // Image.asset('images/UcakS.png')
           ],
         ));
   }
-  
+
   void _showDialog(BuildContext context, String No, int row, int col) {
     showDialog(
       context: context,
@@ -112,7 +186,11 @@ Widget _buildDisabledChair(String chairNo) {
   );
 }
 
-Widget isSelectedd(String chairNo, int index) {
+Widget isSelectedd(String chairNo, int index, Koltuk koltuk) {
+  Color color = Colors.blue;
+  if (koltuk.koltuktipi == Koltuk.tipi[0]) {
+    color = const Color(0xFFFDDE55);
+  }
   return Container(
     decoration: BoxDecoration(
       color: Colors.green,
@@ -133,10 +211,16 @@ Widget isSelectedd(String chairNo, int index) {
   );
 }
 
-Widget _buildEnabledChair(String chairNo) {
+Widget _buildEnabledChair(String chairNo, Koltuk koltuk) {
+  Color color = Colors.blue;
+  if (koltuk.koltuktipi == Koltuk.tipi[0]) {
+    color = const Color(0xFFFDDE55);
+  } else if (koltuk.koltuktipi == Koltuk.tipi[2]) {
+    color = Colors.white;
+  }
   return Container(
     decoration: BoxDecoration(
-      color: Colors.blue,
+      color: color,
       border: Border.all(
         color: isSelected
             ? Colors.green
@@ -148,6 +232,11 @@ Widget _buildEnabledChair(String chairNo) {
     child: Padding(
       padding: EdgeInsets.all(8.0), // Add padding to the Text widget
       child: Text(
+        style: const TextStyle(
+              color: Color(0xFF005096),
+              fontFamily: "Times New Roman",
+              fontWeight: FontWeight.w600,
+            ),
         chairNo,
       ),
     ),

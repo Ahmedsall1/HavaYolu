@@ -38,7 +38,7 @@ class Ucus extends Sefer {
   // uçuş bilgileri
   String UcusBilgileri() {
     return "Ucus Sirket Adi: " +
-        ucak.sirketadi +
+        ucak.sirket.name +
         "Ucak Adi: " +
         ucak.name +
         " Ucus tarihi ve Saati: " +

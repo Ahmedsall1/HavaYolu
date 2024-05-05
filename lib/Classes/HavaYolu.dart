@@ -215,7 +215,7 @@ class HavaYolu {
     DateTime date = DateTime.now();
     Pilot pilot = Pilot("Ahmed");
     Hostese host = Hostese("Fatma");
-    Ucak ucak = Ucak(HavaYolu.UcakTipi[1], "AirJet", pilot, host, "AnadoluJet");
+    Ucak ucak = Ucak(HavaYolu.UcakTipi[1], "AirJet", pilot, host, Sirket("AnadoluJet"));
     // Yolcu yolcu =  Yolcu("Muhammed");
     // ucak.kolutkList[2][2].yolcu = yolcu;
     // ucak.kolutkList[2][2].durum = true;
@@ -235,7 +235,7 @@ class HavaYolu {
 
       Ucus(saat.toString(), sefer, ucak, 400);
       // Sirket("AirPort" + i.toString(), ucak);
-      Ucak(HavaYolu.UcakTipi[1], "AnadoluJet", pilot, host, "AirPort");
+      Ucak(HavaYolu.UcakTipi[1], "AnadoluJet", pilot, host, Sirket("AirPort"));
       Yolcu(airport);
     }
   }

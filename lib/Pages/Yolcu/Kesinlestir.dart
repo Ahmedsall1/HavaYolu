@@ -22,71 +22,96 @@ class Kesinlestir extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text('Bilet Olustur'),
+        title: const Text(
+          'Bilet Oluştur',
+          style: TextStyle(
+            color: Color(0xFF005096),
+            fontFamily: "Times New Roman",
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
       body: Column(
         children: [
           //////////////////////////////// Bilgiler ////////////////////////////////////////////////////////
+          ///
+          ///
           Row(
+            mainAxisAlignment:
+                        MainAxisAlignment.center,
             children: [
               MyCard(
                   text: "Ucret : ${koltuk.ucret} TL",
-                  color: const Color.fromARGB(255, 0, 150, 122)),
+                  color: Color(0xFFFDDE55)),
               MyCard(
                   text: "Koltuk : ${koltuk.No}",
-                  color: const Color.fromARGB(255, 0, 150, 122)),
+                  color: Color(0xFFFDDE55)),
               MyCard(
                   text: "Sure : ${ucus.sure}",
-                  color: const Color.fromARGB(255, 0, 150, 122)),
+                  color: Color(0xFFFDDE55)),
             ],
           ),
           Row(
+            mainAxisAlignment:
+                        MainAxisAlignment.center,
             children: [
               MyCard(
                   text: "Saati : ${ucus.saat}",
-                  color: const Color.fromARGB(255, 0, 80, 150)),
+                  color: const Color.fromARGB(255, 0, 80, 150),txtcolor: Colors.white,),
               MyCard(
                   text: ucus.formattedDate,
-                  color: const Color.fromARGB(255, 0, 80, 150)),
+                  color: const Color.fromARGB(255, 0, 80, 150),txtcolor: Colors.white,),
               MyCard(
                   text: "Koltuk : ${koltuk.koltuktipi}",
-                  color: const Color.fromARGB(255, 0, 80, 150)),
+                  color: const Color.fromARGB(255, 0, 80, 150),txtcolor: Colors.white,),
             ],
           ),
           Row(
+            mainAxisAlignment:
+                        MainAxisAlignment.center,
             children: [
               MyCard(
                   text: "Ucus No : ${ucus.i * 1433}",
-                  color: const Color.fromARGB(255, 0, 150, 122)),
+                  color: const Color(0xFFFDDE55)),
               MyCard(
                   text: "Nerden : ${ucus.nerden}",
-                  color: const Color.fromARGB(255, 0, 150, 122)),
+                  color: const Color(0xFFFDDE55)),
             ],
           ),
           Row(
+            mainAxisAlignment:
+                        MainAxisAlignment.center,
             children: [
               MyCard(
                   text: "Nereye : ${ucus.nereye}",
-                  color: const Color.fromARGB(255, 0, 80, 150)),
+                  color: const Color.fromARGB(255, 0, 80, 150),
+                  txtcolor: Colors.white,
+                  ),
               MyCard(
                 text: "Ucak : ${ucus.ucak.name}",
                 color: const Color.fromARGB(255, 0, 80, 150),
+                txtcolor: Colors.white,
               ),
             ],
           ),
           Row(
             children: [
               MyCard(
-                  text: "Sirket : ${ucus.ucak.sirketadi}",
-                  color: const Color.fromARGB(255, 0, 150, 122)),
+                  text: "Sirket : ${ucus.ucak.sirket.name}",
+                  color: const Color(0xFFFDDE55),
+                  ),
+                  
               MyCard(
                   text: "Pilot : ${ucus.ucak.pilot.name}",
-                  color: const Color.fromARGB(255, 0, 150, 122)),
+                  color: const Color(0xFFFDDE55)),
               MyCard(
                   text: "Ucak : ${ucus.ucak.tip}",
-                  color: const Color.fromARGB(255, 0, 150, 122)),
+                  color: const Color(0xFFFDDE55)),
             ],
           ),
+          const SizedBox(
+                    height: 20.0,
+                  ),
           //////////////////////////////// Yolcu Bilgileri formu ////////////////////////////////////////////////////////
           ///
           ///
@@ -113,12 +138,20 @@ class Kesinlestir extends StatelessWidget {
                             },
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: 'First Name',
-                              hintText: 'Enter first name',
-                              labelStyle:
-                                  TextStyle(fontSize: 16, color: Colors.white),
-                              hintStyle:
-                                  TextStyle(fontSize: 16, color: Colors.white),
+                              labelText: 'ADI',
+                              hintText: 'Adınız Giriniz',
+                              labelStyle: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                              ),
+                              hintStyle: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                         ),
@@ -135,12 +168,20 @@ class Kesinlestir extends StatelessWidget {
                             },
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: 'Last Name',
-                              hintText: 'Enter last name',
-                              labelStyle:
-                                  TextStyle(fontSize: 16, color: Colors.white),
-                              hintStyle:
-                                  TextStyle(fontSize: 16, color: Colors.white),
+                              labelText: 'SOYADI',
+                              hintText: 'Soyadınız Giriniz',
+                              labelStyle: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                              ),
+                              hintStyle: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                         ),
@@ -157,10 +198,19 @@ class Kesinlestir extends StatelessWidget {
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Email',
-                        hintText: 'Enter valid email id as abc@gmail.com',
-                        labelStyle:
-                            TextStyle(fontSize: 16, color: Colors.white),
-                        hintStyle: TextStyle(fontSize: 16, color: Colors.white),
+                        hintText: 'Öğrnek: abc@gmail.com',
+                        labelStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),
@@ -175,11 +225,20 @@ class Kesinlestir extends StatelessWidget {
                       },
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Password',
-                        hintText: 'Enter secure password',
-                        labelStyle:
-                            TextStyle(fontSize: 16, color: Colors.white),
-                        hintStyle: TextStyle(fontSize: 16, color: Colors.white),
+                        labelText: 'ŞİFRE',
+                        hintText: 'Şifreye Giriniz',
+                        labelStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),
@@ -201,8 +260,13 @@ class Kesinlestir extends StatelessWidget {
                                 builder: (_) => Biletlerim(yolcu: yolcu)));
                       },
                       child: const Text(
-                        'Kesinlestir',
-                        style: TextStyle(color: Colors.white, fontSize: 25),
+                        'Kesinleştir',
+                        style: TextStyle(
+                          color: Color(0xFF005096),
+                          fontSize: 25,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),

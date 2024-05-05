@@ -11,16 +11,16 @@ class Ucak {
   static int ID = 1;
   static bool iss = false;
   late int id;
-  late String name="";
+  late String name = "";
   // late Koltuk kolutkList[][];
   late List<Personel> hosteseList = [];
   late Personel pilot;
-  late String sirketadi;
   late String tip;
   late int harfSayisi;
   late int siraSayisi;
   late double koltukUcreti;
   late int koltukSayisi;
+  late Sirket sirket;
   late List<List<Koltuk>> kolutkList = [];
   // Koltuk saysi Uçak tip göre sırala
   void sayisi(String tip) {
@@ -38,11 +38,10 @@ class Ucak {
   }
 
   // bilgiler al
-  Ucak(this.tip, this.name, this.pilot, Personel hostes, String sirketadi) {
+  Ucak(this.tip, this.name, this.pilot, Personel hostes, Sirket sirket) {
     sayisi(tip);
     id = ID;
     ID++;
-    this.sirketadi = sirketadi;
     koltukSayisi = harfSayisi * siraSayisi;
     hosteseList.add(hostes);
 
@@ -55,17 +54,10 @@ class Ucak {
         ),
       );
     }
-    bool a = false;
-    for (Sirket sirket in HavaYolu.SirketiList) {
-      if (sirket.name == sirketadi) {
-        sirket.ucakList.add(this);
-        a = true;
-      }
-    }
-    if (a == false) {
-      Sirket sir = Sirket(sirketadi);
-      sir.ucakList.add(this);
-    }
+
+    sirket.ucakList.add(this);
+    this.sirket = sirket;
+
     HavaYolu.UcakList.add(this);
   }
   // koltuk seç

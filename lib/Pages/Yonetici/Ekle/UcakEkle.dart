@@ -130,7 +130,7 @@ class _UcakEkle extends State<UcakEkle> {
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
-                  Ucak(tip, name, pilot!, host!, sirketadi);
+                  Ucak(tip, name, pilot!, host!, Sirket(sirketadi));
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => Ucaklar()));
                 },

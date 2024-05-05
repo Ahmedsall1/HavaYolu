@@ -14,13 +14,15 @@ import 'package:havayolu/Classes/Sefer.dart';
 void main() {
   DateTime dt = DateTime.utc(
       DateTime.now().year, DateTime.now().month, DateTime.now().day);
-  Sirket("Anadolu Jet");
+  Sirket sirket=Sirket("Pegasus");
+  // sirket.logo=Image.asset('images/Sirket/Pegasus_Airlines.jpg',width: 30,height: 30,);
   Yolcu yol = Yolcu("Muhammed");
   yol.Ytip = Yolcu.tip[1];
   Sefer s =
       Sefer(130, HavaYolu.Airports[0], HavaYolu.Airports[1], "12:30", dt, true);
   Ucak uc = Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), "Anadolu");
+      Hostese("Sıla S"), sirket);
+
   Ucus("12:30", s, uc, 300);
   Ucus("22:40", s, uc, 300);
   runApp(const MaterialApp(

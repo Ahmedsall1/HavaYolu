@@ -30,7 +30,7 @@ class Ucaklar extends StatelessWidget {
                   child: Icon(Icons.edit,color:Colors.green),
                   
                 ),
-                subtitle: Text(" P: "+uc.pilot.name+" H: "+uc.hosteseList.first.name+" Ş: "+uc.sirketadi),
+                subtitle: Text(" P: "+uc.pilot.name+" H: "+uc.hosteseList.first.name+" Ş: "+uc.sirket.name),
               ),
             )
         ],

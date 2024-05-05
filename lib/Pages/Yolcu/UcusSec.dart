@@ -29,7 +29,11 @@ class UcusSec extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Ucus Bul"),
+        title: Text(
+          '${nerden.replaceAll("Airport", "")} >> ${nereye.replaceAll("Airport", "")}',
+          style: TextStyle(color: Color.fromARGB(255, 0, 80, 150),fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,),
+        ),
       ),
       body: Center(
         child: ListView.builder(
@@ -42,34 +46,78 @@ class UcusSec extends StatelessWidget {
             int minute1 = int.parse(parts[0]);
             int minute2 = int.parse(parts[1] + parts1[1]);
             int hour = hour1 + hour2;
-            int minute=minute1 + minute2;
-            print(hour);
+            int minute = minute1 + minute2;
             if (minute >= 60) {
               hour += minute ~/ 60; // Add excess minutes to hours
               minute %= 60; // Set minutes to the remainder after dividing by 60
             }
             hour %= 24;
-            String result = '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}';
+            String result =
+                '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}';
             return Card(
               color: const Color.fromARGB(255, 0, 80, 150),
               elevation: 20.0,
               child: Padding(
-                padding: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ListTile(
-                  title: Text(
-                    '${ucuslar[index].nerden.replaceAll("Airport", "")}--> ${ucuslar[index].nereye.replaceAll("Airport", "")}',
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  title: Row(
+                    children: [
+                      ucuslar[index].ucak.sirket.logo,
+                      Text(
+                        '  ${ucuslar[index].ucak.sirket.name}',
+                        style: const TextStyle(
+                          fontSize: 20,
+                          color: Color(0xFFFDDE55),
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 20.0,
+                      ),
+                      Text(
+                        "${ucuslar[index].saat} -> $result",
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
                   ),
-                  leading: Text(
-                    ucuslar[index].i.toString(),
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    ucuslar[index].saat +
-                        "->" +
-                        result +"  "+
-                        ucuslar[index].ucret.toString()+"TL",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  // leading: ucuslar[index].ucak.sirket.logo,
+                  subtitle: Row(
+                    children: [
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        " ${ucuslar[index].sure} dk",
+                        style:
+                        
+                            const TextStyle(fontSize: 14, color: Colors.white,fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,),
+                      ),
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        " 1x15 kg",
+                        style:
+                            const TextStyle(fontSize: 14, color: Colors.white,fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,),
+                      ),
+                      const SizedBox(
+                        width: 30.0,
+                      ),
+                      Text(
+                        " ${ucuslar[index].ucret} TL",
+                        style:
+                            const TextStyle(fontSize: 20, color: Color(0xFFFDDE55),fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,),
+                      ),
+                    ],
                   ),
                   trailing: IconButton(
                     onPressed: () {
@@ -82,8 +130,8 @@ class UcusSec extends StatelessWidget {
                     },
                     icon: Image.asset(
                       'images/Ucus.png',
-                      width: 30,
-                      height: 30,
+                      width: 40,
+                      height: 40,
                     ),
                   ),
                 ),
