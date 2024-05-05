@@ -41,7 +41,9 @@ class _SeferBulState extends State<SeferBul> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sefer Bul'),
+
       ),
+
       body: Column(
         children: [
           // const Nerden(),
@@ -166,7 +168,7 @@ class _SeferBulState extends State<SeferBul> {
                             children: [
                               const Icon(
                                 Icons.date_range_outlined,
-                                color: Color.fromARGB(255, 0, 80, 150),
+                                color: Color(0xFF005096),
                               ),
                               Text(
                                 ' ${selectedDate.toLocal().day}/${selectedDate.toLocal().month}/${selectedDate.toLocal().year}',
@@ -181,8 +183,8 @@ class _SeferBulState extends State<SeferBul> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor:const Color.fromRGBO(253, 222, 85,
-                              1), // Set background color to RGB(253, 222, 85)
+                          backgroundColor: Color(
+                              0xFFFDDE55), // Set background color to RGB(253, 222, 85)
                         ),
                         child: const Text(
                           'Ucus Sec',

@@ -20,7 +20,7 @@ void main() {
   Sefer s =
       Sefer(130, HavaYolu.Airports[0], HavaYolu.Airports[1], "12:30", dt, true);
   Ucak uc = Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Fatma"), "Anadolu");
+      Hostese("Sıla S"), "Anadolu");
   Ucus("12:30", s, uc, 300);
   Ucus("22:40", s, uc, 300);
   runApp(const MaterialApp(
@@ -30,45 +30,150 @@ void main() {
 }
 
 class FirstRoute extends StatelessWidget {
-  
   const FirstRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('AnaSayfa'),
-      ),
+      
       body: Center(
         child: Column(
           children: [
-            Image.asset('images/logo.png'),
-            ElevatedButton(
-              child: const Text('Yoluc'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) =>  SeferBul()),
-                );
-              },
+            Image.asset(
+              'images/logo.png',
+              width: 250,
+              height: 250,
             ),
-            ElevatedButton(
-              child: const Text('Personel'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Pindex()),
-                );
-              },
-            ),
-            ElevatedButton(
-              child: const Text('Yonetici'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Login()),
-                );
-              },
+            Card(
+              color: const Color.fromARGB(255, 0, 80, 150),
+              elevation: 20.0,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(
+                            0xFFFDDE55), // Set background color to RGB(253, 222, 85)
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            height: 60.0,
+                          ),
+                          Image.asset(
+                            'images/Yolcu.png',
+                            width: 30,
+                            height: 30,
+                          ),
+                          const SizedBox(
+                            width: 10.0,
+                          ),
+                          const Text(
+                            'Yolcu',
+                            style: TextStyle(
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                                fontSize: 30.0,
+                                color: Color.fromARGB(255, 0, 80, 150)),
+                          ),
+                        ],
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SeferBul()),
+                        );
+                      },
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(
+                            0xFFFDDE55), // Set background color to RGB(253, 222, 85)
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            height: 60.0,
+                          ),
+                          Image.asset(
+                            'images/Pilot.png',
+                            width: 30,
+                            height: 30,
+                          ),
+                          const SizedBox(
+                            width: 10.0,
+                          ),
+                          const Text(
+                            'Personel',
+                            style: TextStyle(
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                                fontSize: 30.0,
+                                color: Color.fromARGB(255, 0, 80, 150)),
+                          ),
+                        ],
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Pindex()),
+                        );
+                      },
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(
+                            0xFFFDDE55), // Set background color to RGB(253, 222, 85)
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            height: 60.0,
+                          ),
+                          Image.asset(
+                            'images/admin.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                          const SizedBox(
+                            width: 10.0,
+                          ),
+                          const Text(
+                            'Yönetici',
+                            style: TextStyle(
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                                fontSize: 30.0,
+                                color: Color.fromARGB(255, 0, 80, 150)),
+                          ),
+                        ],
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Login()),
+                        );
+                      },
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
