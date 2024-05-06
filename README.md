@@ -35,6 +35,27 @@ samples, guidance on mobile development, and a full API reference.
 
 <img src="https://github.com/Ahmedsall1/HavaYolu-Bilgi-Sistemi-/blob/main/foto/Screenshot%202024-04-03%20100708.png" >
 
+<h2> AnaSayfa </h2>
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/AnaSayfa.jpg" >
+<h2> Sefer Bul </h2>
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" >
+<h2> Uçuş Bul </h2>
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Ucusbul.jpg" >
+<h2> Koltuk Seç </h2>
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukS.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukE.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukB.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Kesinles.jpg" >
+
+
+
+<h2> Kesinleştir </h2>
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Kesinlestir.jpg" >
+<h2> Biletlerim </h2>
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/biletlerim.jpg" >
+<h2> Bilet </h2>
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Bilet.jpg" >
+
 <h2> Kulanılan Araçlar </h2>
 <ul>
     <li> Flutter/Dart </li>
