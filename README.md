@@ -36,7 +36,7 @@ samples, guidance on mobile development, and a full API reference.
 <img src="https://github.com/Ahmedsall1/HavaYolu-Bilgi-Sistemi-/blob/main/foto/Screenshot%202024-04-03%20100708.png" >
 
 <h2> AnaSayfa </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/AnaSayfa.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/AnaSayfa.jpg" width="400" height="800">
 <h2> Sefer Bul </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" >
 <h2> Uçuş Bul </h2>
