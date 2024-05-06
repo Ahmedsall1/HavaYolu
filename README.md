@@ -41,11 +41,14 @@ samples, guidance on mobile development, and a full API reference.
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" width="300" height="600" >
 <h2> Uçuş Bul </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Ucusbul.jpg" width="300" height="600" >
-<h2> Koltuk Seç </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukS.jpg" width="300" height="600">
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukE.jpg" width="300" height="600">
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukB.jpg" width="300" height="600">
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Kesinles.jpg" width="300" height="600">
+<h2>Koltuk Seç</h2>
+
+<div style="display:flex">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukS.jpg" width="300" height="600">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukE.jpg" width="300" height="600">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukB.jpg" width="300" height="600">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Kesinles.jpg" width="300" height="600">
+</div>
 
 
 
