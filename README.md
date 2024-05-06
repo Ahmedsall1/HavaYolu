@@ -36,25 +36,25 @@ samples, guidance on mobile development, and a full API reference.
 <img src="https://github.com/Ahmedsall1/HavaYolu-Bilgi-Sistemi-/blob/main/foto/Screenshot%202024-04-03%20100708.png" >
 
 <h2> AnaSayfa </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/AnaSayfa.jpg" width="400" height="800">
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/AnaSayfa.jpg" width="300" height="600">
 <h2> Sefer Bul </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" width="300" height="600" >
 <h2> Uçuş Bul </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Ucusbul.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Ucusbul.jpg" width="300" height="600" >
 <h2> Koltuk Seç </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukS.jpg" >
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukE.jpg" >
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukB.jpg" >
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Kesinles.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukS.jpg" width="300" height="600">
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukE.jpg" width="300" height="600">
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukB.jpg" width="300" height="600">
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Kesinles.jpg" width="300" height="600">
 
 
 
 <h2> Kesinleştir </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Kesinlestir.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Kesinlestir.jpg" width="300" height="600">
 <h2> Biletlerim </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/biletlerim.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/biletlerim.jpg" width="300" height="600">
 <h2> Bilet </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Bilet.jpg" >
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Bilet.jpg" width="300" height="600">
 
 <h2> Kulanılan Araçlar </h2>
 <ul>
