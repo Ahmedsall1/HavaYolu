@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:intl/intl.dart';
-// import 'package:havayolu/Classes/Sefer.dart';
-// import 'package:havayolu/Classes/Personel.dart';
-// import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
+
 import 'package:havayolu/Classes/Ucus.dart';
 import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 
@@ -14,7 +12,6 @@ class UcusSec extends StatelessWidget {
   DateFormat myFormat = DateFormat('yyyy-MM-dd');
   List<Ucus> ucuslar = [];
 
-  // Personel personel = Personel("Ahmed");
   UcusSec({
     Key? key,
     required this.nerden,
@@ -31,27 +28,32 @@ class UcusSec extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           '${nerden.replaceAll("Airport", "")} >> ${nereye.replaceAll("Airport", "")}',
-          style: TextStyle(color: Color.fromARGB(255, 0, 80, 150),fontFamily: "Times New Roman",
-                                fontWeight: FontWeight.w600,),
+          style: const TextStyle(
+            color: Color.fromARGB(255, 0, 80, 150),
+            fontFamily: "Times New Roman",
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
       body: Center(
         child: ListView.builder(
           itemCount: ucuslar.length,
           itemBuilder: (BuildContext context, int index) {
-            List<String> parts = ucuslar[index].saat.split(':');
-            List<String> parts1 = ucuslar[index].sure.split(':');
+            List<String> parts1 = ucuslar[index].saat.split(':');
+            List<String> parts2 = ucuslar[index].sure.split(':');
+
             int hour1 = int.parse(parts1[0]);
-            int hour2 = int.parse(parts[0] + parts1[0]);
-            int minute1 = int.parse(parts[0]);
-            int minute2 = int.parse(parts[1] + parts1[1]);
-            int hour = hour1 + hour2;
-            int minute = minute1 + minute2;
-            if (minute >= 60) {
-              hour += minute ~/ 60; // Add excess minutes to hours
-              minute %= 60; // Set minutes to the remainder after dividing by 60
-            }
+            int minute1 = int.parse(parts1[1]);
+            int hour2 = int.parse(parts2[0]);
+            int minute2 = int.parse(parts2[1]);
+
+            int totalMinutes = (hour1 * 60 + minute1) + (hour2 * 60 + minute2);
+
+            int hour = totalMinutes ~/ 60;
+            int minute = totalMinutes % 60;
+
             hour %= 24;
+
             String result =
                 '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}';
             return Card(
@@ -94,28 +96,36 @@ class UcusSec extends StatelessWidget {
                       ),
                       Text(
                         " ${ucuslar[index].sure} dk",
-                        style:
-                        
-                            const TextStyle(fontSize: 14, color: Colors.white,fontFamily: "Times New Roman",
-                                fontWeight: FontWeight.w600,),
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       const SizedBox(
                         width: 10.0,
                       ),
-                      Text(
+                      const Text(
                         " 1x15 kg",
-                        style:
-                            const TextStyle(fontSize: 14, color: Colors.white,fontFamily: "Times New Roman",
-                                fontWeight: FontWeight.w600,),
+                        style:  TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       const SizedBox(
                         width: 30.0,
                       ),
                       Text(
-                        " ${ucuslar[index].ucret} TL",
-                        style:
-                            const TextStyle(fontSize: 20, color: Color(0xFFFDDE55),fontFamily: "Times New Roman",
-                                fontWeight: FontWeight.w600,),
+                        " ${ucuslar[index].ucret}TL",
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Color(0xFFFDDE55),
+                          fontFamily: "Times New Roman",
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ],
                   ),

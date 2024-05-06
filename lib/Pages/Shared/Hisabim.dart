@@ -1,8 +1,7 @@
+// ignore_for_file: must_be_immutable, file_names
+
 import 'package:flutter/material.dart';
-import 'package:havayolu/Classes/Koltuk.dart';
-import 'package:havayolu/Classes/Ucus.dart';
 import 'package:havayolu/Classes/User.dart';
-import 'package:havayolu/Classes/Yolcu.dart';
 
 
 class Hisabim extends StatelessWidget {
@@ -28,7 +27,7 @@ class Hisabim extends StatelessWidget {
                 color: Colors.teal,
                 elevation: 10.0,
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Text("${user.id}"),
                 ),
               ),
@@ -36,7 +35,8 @@ class Hisabim extends StatelessWidget {
                 color: Colors.teal,
                 elevation: 10.0,
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
+                  // ignore: unnecessary_string_interpolations
                   child: Text("${user.name}"),
                 ),
               ),
@@ -44,7 +44,8 @@ class Hisabim extends StatelessWidget {
                 color: Colors.teal,
                 elevation: 10.0,
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
+                  // ignore: unnecessary_string_interpolations
                   child: Text("${user.email}"),
                 ),
               ),

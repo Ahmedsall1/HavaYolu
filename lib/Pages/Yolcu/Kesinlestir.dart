@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:havayolu/Classes/Bilet.dart';
+import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Koltuk.dart';
 import 'package:havayolu/Classes/Ucus.dart';
 import 'package:havayolu/Classes/Yolcu.dart';
@@ -37,38 +39,40 @@ class Kesinlestir extends StatelessWidget {
           ///
           ///
           Row(
-            mainAxisAlignment:
-                        MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MyCard(
                   text: "Ucret : ${koltuk.ucret} TL",
-                  color: Color(0xFFFDDE55)),
+                  color: const Color(0xFFFDDE55)),
               MyCard(
                   text: "Koltuk : ${koltuk.No}",
-                  color: Color(0xFFFDDE55)),
+                  color: const Color(0xFFFDDE55)),
               MyCard(
-                  text: "Sure : ${ucus.sure}",
-                  color: Color(0xFFFDDE55)),
+                  text: "Sure : ${ucus.sure}", color: const Color(0xFFFDDE55)),
             ],
           ),
           Row(
-            mainAxisAlignment:
-                        MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MyCard(
-                  text: "Saati : ${ucus.saat}",
-                  color: const Color.fromARGB(255, 0, 80, 150),txtcolor: Colors.white,),
+                text: "Saati : ${ucus.saat}",
+                color: const Color.fromARGB(255, 0, 80, 150),
+                txtcolor: Colors.white,
+              ),
               MyCard(
-                  text: ucus.formattedDate,
-                  color: const Color.fromARGB(255, 0, 80, 150),txtcolor: Colors.white,),
+                text: ucus.formattedDate,
+                color: const Color.fromARGB(255, 0, 80, 150),
+                txtcolor: Colors.white,
+              ),
               MyCard(
-                  text: "Koltuk : ${koltuk.koltuktipi}",
-                  color: const Color.fromARGB(255, 0, 80, 150),txtcolor: Colors.white,),
+                text: "Koltuk : ${koltuk.koltuktipi}",
+                color: const Color.fromARGB(255, 0, 80, 150),
+                txtcolor: Colors.white,
+              ),
             ],
           ),
           Row(
-            mainAxisAlignment:
-                        MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MyCard(
                   text: "Ucus No : ${ucus.i * 1433}",
@@ -79,14 +83,13 @@ class Kesinlestir extends StatelessWidget {
             ],
           ),
           Row(
-            mainAxisAlignment:
-                        MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MyCard(
-                  text: "Nereye : ${ucus.nereye}",
-                  color: const Color.fromARGB(255, 0, 80, 150),
-                  txtcolor: Colors.white,
-                  ),
+                text: "Nereye : ${ucus.nereye}",
+                color: const Color.fromARGB(255, 0, 80, 150),
+                txtcolor: Colors.white,
+              ),
               MyCard(
                 text: "Ucak : ${ucus.ucak.name}",
                 color: const Color.fromARGB(255, 0, 80, 150),
@@ -97,10 +100,9 @@ class Kesinlestir extends StatelessWidget {
           Row(
             children: [
               MyCard(
-                  text: "Sirket : ${ucus.ucak.sirket.name}",
-                  color: const Color(0xFFFDDE55),
-                  ),
-                  
+                text: "Sirket : ${ucus.ucak.sirket.name}",
+                color: const Color(0xFFFDDE55),
+              ),
               MyCard(
                   text: "Pilot : ${ucus.ucak.pilot.name}",
                   color: const Color(0xFFFDDE55)),
@@ -110,8 +112,8 @@ class Kesinlestir extends StatelessWidget {
             ],
           ),
           const SizedBox(
-                    height: 20.0,
-                  ),
+            height: 20.0,
+          ),
           //////////////////////////////// Yolcu Bilgileri formu ////////////////////////////////////////////////////////
           ///
           ///
@@ -250,14 +252,40 @@ class Kesinlestir extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20)),
                     child: TextButton(
                       onPressed: () {
-                        yolcu = Yolcu(first + last);
-                        yolcu.email = email;
-                        yolcu.password = password;
-                        yolcu.biletlerim.add(Bilet(koltuk, ucus, yolcu));
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => Biletlerim(yolcu: yolcu)));
+                        bool v = true;
+                        if (first != "" &&
+                            last != "" &&
+                            email != "" &&
+                            password != "") {
+                          for (Yolcu yolcu in HavaYolu.YolcuList) {
+                            if (email == yolcu.email &&
+                                password == yolcu.password) {
+                              yolcu.biletlerim.add(Bilet(koltuk, ucus, yolcu));
+                              koltuk.durum = true;
+                              v = false;
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) =>
+                                          Biletlerim(yolcu: yolcu)));
+                            } else {
+                              print("object");
+                            }
+                          }
+                          if (v) {
+                            yolcu = Yolcu("$first $last");
+                            yolcu.email = email;
+                            yolcu.password = password;
+                            yolcu.biletlerim.add(Bilet(koltuk, ucus, yolcu));
+                            koltuk.durum = true;
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => Biletlerim(yolcu: yolcu)));
+                          }
+                        } else {
+                          _showDialog(context);
+                        }
                       },
                       child: const Text(
                         'Kesinleştir',
@@ -276,6 +304,51 @@ class Kesinlestir extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  void _showDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color(0xFF005096),
+          title: const Text(
+            'Hata',
+            style: TextStyle(
+              color: Color(0xFFFDDE55),
+              fontSize: 20.0,
+              fontFamily: "Times New Roman",
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          content: const Text(
+            'Bilgiler Eksik !',
+            style: TextStyle(
+              color: Color(0xFFFDDE55),
+              fontSize: 14.0,
+              fontFamily: "Times New Roman",
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text(
+                'iptal',
+                style: TextStyle(
+                  color: Color(0xFFFDDE55),
+                  fontSize: 16.0,
+                  fontFamily: "Times New Roman",
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

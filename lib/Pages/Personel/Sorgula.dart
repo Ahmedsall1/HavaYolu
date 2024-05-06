@@ -1,9 +1,12 @@
+
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Personel.dart';
 import 'package:havayolu/Classes/Ucus.dart';
-import 'package:havayolu/Classes/User.dart';
 
+// ignore: must_be_immutable
 class Sorgula extends StatelessWidget {
   late Personel person;
   late int id;
@@ -25,18 +28,9 @@ class Sorgula extends StatelessWidget {
             Card(
               child: ListTile(
                 leading: Text(ucus.i.toString()),
-                title:  Text("Tarih: " +
-                    ucus.formattedDate +
-                    "   Saat : " +
-                    ucus.saat +
-                    " KM"),
+                title:  Text("Tarih: ${ucus.formattedDate}   Saat : ${ucus.saat} KM"),
                 
-                subtitle: Text(ucus.nerden +
-                    "->" +
-                    ucus.nereye +
-                    " " +
-                    ucus.KM.toString() +
-                    " KM "+" P: "+ucus.ucak.pilot.name +" Ş: "+ucus.ucak.name),
+                subtitle: Text("${ucus.nerden}->${ucus.nereye} ${ucus.KM} KM  P: ${ucus.ucak.pilot.name} Ş: ${ucus.ucak.name}"),
               ),
             )
         ],

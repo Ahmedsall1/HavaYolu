@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
-import 'package:havayolu/Classes/Personel.dart';
+
 import 'package:havayolu/Classes/User.dart';
 import "package:havayolu/Pages/Personel/Sorgula.dart";
 
+// ignore: must_be_immutable
 class Pindex extends StatelessWidget {
   late String email = "";
   late String password = "";

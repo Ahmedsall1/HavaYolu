@@ -13,11 +13,13 @@ class Ucus extends Sefer {
   late double ucret;
   late Ucak ucak;
   late String saat;
-
+  late String ucusNo;
   // Oluşturcu
   Ucus(this.saat, Sefer sefer, this.ucak, double ucret)
-      : super(sefer.KM, sefer.nerden, sefer.nereye, sefer.sure, sefer.date,false) {
+      : super(sefer.KM, sefer.nerden, sefer.nereye, sefer.sure, sefer.date,
+            false) {
     i = ID;
+    ucusNo = "TK${i * 1702}";
     ID++;
     this.ucret = ucret;
     this.ucak.koltukUcreti = ucret;
@@ -33,7 +35,6 @@ class Ucus extends Sefer {
     }
     HavaYolu.UcusList.add(this);
   }
-  
 
   // uçuş bilgileri
   String UcusBilgileri() {

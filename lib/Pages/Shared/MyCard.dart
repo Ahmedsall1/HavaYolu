@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, file_names
+
 import 'package:flutter/material.dart';
 
 class MyCard extends StatelessWidget {
@@ -5,9 +7,7 @@ class MyCard extends StatelessWidget {
   late Color color;
   Color? txtcolor;
   MyCard({super.key, required this.text, required this.color, this.txtcolor}) {
-    if (txtcolor == null) {
-      txtcolor = Colors.black;
-    }
+    txtcolor ??= Colors.black;
   }
 
   @override
@@ -16,7 +16,7 @@ class MyCard extends StatelessWidget {
       color: color,
       elevation: 10.0,
       child: Padding(
-        padding: EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12.0),
         child: Text(
           text,
           style: TextStyle(
