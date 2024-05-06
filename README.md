@@ -37,11 +37,11 @@ samples, guidance on mobile development, and a full API reference.
 
 <h2> AnaSayfa </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/AnaSayfa.jpg" width="300" height="600">
-<h2> Sefer Bul </h2>
+<h2> Yolcu/Sefer Bul </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" width="300" height="600" >
-<h2> Uçuş Bul </h2>
+<h2>  Yolcu/Uçuş Bul </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Ucusbul.jpg" width="300" height="600" >
-<h2>Koltuk Seç</h2>
+<h2>  Yolcu/Koltuk Seç</h2>
 
 <div style="display:flex">
   <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/KoltukS.jpg" width="300" height="600">
@@ -52,14 +52,14 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-<h2> Kesinleştir </h2>
+<h2>  Yolcu/Kesinleştir </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Kesinlestir.jpg" width="300" height="600">
-<h2> Biletlerim </h2>
+<h2>  Yolcu/Biletlerim </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/biletlerim.jpg" width="300" height="600">
-<h2> Bilet </h2>
+<h2>  Yolcu/Bilet </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Bilet.jpg" width="300" height="600">
 
-<h2> Kulanılan Araçlar </h2>
+<h2>  Yolcu/Kulanılan Araçlar </h2>
 <ul>
     <li> Flutter/Dart </li>
     <li> Visio </li>
