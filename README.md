@@ -47,7 +47,7 @@
 <h2>  Yolcu/Bilet </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Bilet.jpg" width="300" height="600">
 
-<h2>  Yolcu/Kulanılan Araçlar </h2>
+<h2>  Kulanılan Araçlar </h2>
 <ul>
     <li> Flutter/Dart </li>
     <li> Visio </li>
