@@ -25,11 +25,12 @@
 
 <h2> AnaSayfa </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/AnaSayfa.jpg" width="300" height="600">
-<div style="display:flex; align-items:center;">
+
+  <div style="display:flex; justify-content: space-between; align-items: center;">
   <h2>Yolcu/Sefer Bul</h2>
-  <div style="flex:1"></div>
   <h2>Personel/Giriş</h2>
 </div>
+
 <div style="display:flex">
   <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" width="300" height="600">
   <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/PersonelGiris.jpg" width="300" height="600">
