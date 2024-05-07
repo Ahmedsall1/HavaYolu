@@ -12,7 +12,7 @@ class Personeller extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Personeller'),
       ),
-      body: Column(
+      body: ListView(
         children: [
           for (User per in HavaYolu.PersonelList)
             Card(

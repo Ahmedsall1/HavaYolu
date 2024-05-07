@@ -34,7 +34,7 @@ class Biletlerim extends StatelessWidget {
     } else {
       return Scaffold(
         appBar: Appbar(title: "Biletlerim", user: yolcu),
-        body: Column(
+        body: ListView(
           children: [
             for (Bilet bilet in yolcu.biletlerim)
               Card(
@@ -83,86 +83,3 @@ class Biletlerim extends StatelessWidget {
     }
   }
 }
-// Card(
-//               color: const Color.fromARGB(255, 0, 80, 150),
-//               elevation: 20.0,
-//               child: Padding(
-//                 padding: const EdgeInsets.all(10.0),
-//                 child: ListTile(
-//                   title: Row(
-//                     children: [
-//                       ucuslar[index].ucak.sirket.logo,
-//                       Text(
-//                         '  ${ucuslar[index].ucak.sirket.name}',
-//                         style: const TextStyle(
-//                           fontSize: 20,
-//                           color: Color(0xFFFDDE55),
-//                           fontFamily: "Times New Roman",
-//                           fontWeight: FontWeight.w600,
-//                         ),
-//                       ),
-//                       const SizedBox(
-//                         width: 20.0,
-//                       ),
-//                       Text(
-//                         "${ucuslar[index].saat} -> $result",
-//                         style: const TextStyle(
-//                           fontSize: 16,
-//                           color: Colors.white,
-//                           fontFamily: "Times New Roman",
-//                           fontWeight: FontWeight.w600,
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                   // leading: ucuslar[index].ucak.sirket.logo,
-//                   subtitle: Row(
-//                     children: [
-//                       const SizedBox(
-//                         width: 10.0,
-//                       ),
-//                       Text(
-//                         " ${ucuslar[index].sure} dk",
-//                         style:
-                        
-//                             const TextStyle(fontSize: 14, color: Colors.white,fontFamily: "Times New Roman",
-//                                 fontWeight: FontWeight.w600,),
-//                       ),
-//                       const SizedBox(
-//                         width: 10.0,
-//                       ),
-//                       Text(
-//                         " 1x15 kg",
-//                         style:
-//                             const TextStyle(fontSize: 14, color: Colors.white,fontFamily: "Times New Roman",
-//                                 fontWeight: FontWeight.w600,),
-//                       ),
-//                       const SizedBox(
-//                         width: 30.0,
-//                       ),
-//                       Text(
-//                         " ${ucuslar[index].ucret} TL",
-//                         style:
-//                             const TextStyle(fontSize: 20, color: Color(0xFFFDDE55),fontFamily: "Times New Roman",
-//                                 fontWeight: FontWeight.w600,),
-//                       ),
-//                     ],
-//                   ),
-//                   trailing: IconButton(
-//                     onPressed: () {
-//                       Navigator.push(
-//                         context,
-//                         MaterialPageRoute(
-//                             builder: (context) =>
-//                                 KoltukSec(id: ucuslar[index].i)),
-//                       );
-//                     },
-//                     icon: Image.asset(
-//                       'images/Ucus.png',
-//                       width: 40,
-//                       height: 40,
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             );

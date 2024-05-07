@@ -42,7 +42,7 @@ class Sirket {
   Sirket(this.name) {
     id = ID;
     ID++;
-    logo = Image.asset('images/Sirket/THY.png',height: 30,width: 30,);
+    logo = Image.asset('images/Sirket/$name.png',height: 30,width: 30,);
     bool ar = false;
     for (Sirket sirket in HavaYolu.SirketiList) {
       if (sirket.name == name) {

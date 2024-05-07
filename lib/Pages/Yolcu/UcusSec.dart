@@ -60,7 +60,7 @@ class UcusSec extends StatelessWidget {
               color: const Color.fromARGB(255, 0, 80, 150),
               elevation: 20.0,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(5.0),
                 child: ListTile(
                   title: Row(
                     children: [
@@ -68,7 +68,7 @@ class UcusSec extends StatelessWidget {
                       Text(
                         '  ${ucuslar[index].ucak.sirket.name}',
                         style: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 16,
                           color: Color(0xFFFDDE55),
                           fontFamily: "Times New Roman",
                           fontWeight: FontWeight.w600,

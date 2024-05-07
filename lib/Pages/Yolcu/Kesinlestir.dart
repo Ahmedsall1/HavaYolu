@@ -98,6 +98,7 @@ class Kesinlestir extends StatelessWidget {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MyCard(
                 text: "Sirket : ${ucus.ucak.sirket.name}",
@@ -106,9 +107,7 @@ class Kesinlestir extends StatelessWidget {
               MyCard(
                   text: "Pilot : ${ucus.ucak.pilot.name}",
                   color: const Color(0xFFFDDE55)),
-              MyCard(
-                  text: "Ucak : ${ucus.ucak.tip}",
-                  color: const Color(0xFFFDDE55)),
+              
             ],
           ),
           const SizedBox(
@@ -268,9 +267,7 @@ class Kesinlestir extends StatelessWidget {
                                   MaterialPageRoute(
                                       builder: (_) =>
                                           Biletlerim(yolcu: yolcu)));
-                            } else {
-                              print("object");
-                            }
+                            } 
                           }
                           if (v) {
                             yolcu = Yolcu("$first $last");

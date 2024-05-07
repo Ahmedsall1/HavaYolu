@@ -15,31 +15,59 @@ void main() {
   DateTime dt = DateTime.utc(
       DateTime.now().year, DateTime.now().month, DateTime.now().day);
   Sirket sirket = Sirket("THY");
-  Sirket sirket1 = Sirket("THY");
-  sirket1.logo=Image.asset('images/Sirket/Pegasus_Airlines.jpg',width: 30,height: 30,);
+  Sirket sirket1 = Sirket("AnadoluJet");
+  Sirket sirket2 = Sirket("Pegasus");
   Yolcu yol = Yolcu("Muhammed");
   yol.Ytip = Yolcu.tip[1];
   Sefer s =
       Sefer(130, HavaYolu.Airports[0], HavaYolu.Airports[1], "04:30", dt, true);
-  Ucak uc = Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), sirket);
-  Ucak uc1 = Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), sirket1);
-
-  Ucus("12:30", s, Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), sirket), 999);
-  Ucus("04:30", s, Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), sirket), 1200);
-  Ucus("05:40", s, Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), sirket1), 600);
-  Ucus("06:40", s, Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), sirket1), 700);
-  Ucus("08:40", s, Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), sirket1), 800);
-  Ucus("10:40", s, Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), sirket1), 800);
-  Ucus("22:40", s, Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed S"),
-      Hostese("Sıla S"), sirket1), 800);
+  // Ucak uc = Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Ahmed ALOmer"),
+  //     Hostese("Nur Hamui"), sirket);
+  // Ucak uc1 = Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Mahmud Alali"),
+  //     Hostese("Ali Rıza"), sirket1);
+  Pilot pilot = Pilot("Ahmed Salih");
+  Ucus(
+      "12:30",
+      s,
+      Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", pilot,
+          Hostese("Fatma S"), sirket),
+      999);
+  Ucus(
+      "04:30",
+      s,
+      Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", pilot,
+          Hostese("Sıla deniz"), sirket),
+      1200);
+  Ucus(
+      "05:40",
+      s,
+      Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Yusuf Oglu"),
+          Hostese("Ayşe demir"), sirket1),
+      600);
+  Ucus(
+      "06:40",
+      s,
+      Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Sami Mula"),
+          Hostese("Abodo El"), sirket1),
+      700);
+  Ucus(
+      "08:40",
+      s,
+      Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Muhammed ELM"),
+          Hostese("Hacı Bayram"), sirket1),
+      800);
+  Ucus(
+      "10:40",
+      s,
+      Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Muhammed Osman"),
+          Hostese("Randa Ahmed"), sirket2),
+      800);
+  Ucus(
+      "22:40",
+      s,
+      Ucak(HavaYolu.UcakTipi[2], "AnadoluJet", Pilot("Hasan Sahvan"),
+          Hostese("Merve Uzun"), sirket2),
+      800);
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'Navigation Basics',
@@ -75,7 +103,7 @@ class FirstRoute extends StatelessWidget {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(
+                          backgroundColor: const Color(
                               0xFFFDDE55), // Set background color to RGB(253, 222, 85)
                         ),
                         child: Row(
@@ -114,7 +142,7 @@ class FirstRoute extends StatelessWidget {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(
+                          backgroundColor: const Color(
                               0xFFFDDE55), // Set background color to RGB(253, 222, 85)
                         ),
                         child: Row(
@@ -153,7 +181,7 @@ class FirstRoute extends StatelessWidget {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(
+                          backgroundColor: const Color(
                               0xFFFDDE55), // Set background color to RGB(253, 222, 85)
                         ),
                         child: Row(
