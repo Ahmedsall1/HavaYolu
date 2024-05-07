@@ -25,6 +25,12 @@
 
 <h2> AnaSayfa </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/AnaSayfa.jpg" width="300" height="600">
+<div style="display:flex">
+  <h2> Yolcu/Sefer Bul  Personel Girişi</h2>
+<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" width="300" height="600" >
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/PersonelGiris.jpg" width="300" height="600" >
+</div>
+
 <h2> Yolcu/Sefer Bul </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" width="300" height="600" >
 <h2>  Yolcu/Uçuş Bul </h2>
