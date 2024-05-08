@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, use_super_parameters, file_names
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:intl/intl.dart';
@@ -57,7 +59,7 @@ class UcusSec extends StatelessWidget {
             String result =
                 '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}';
             return Card(
-              color: const Color.fromARGB(255, 0, 80, 150),
+              color: const Color(0xFF005096),
               elevation: 20.0,
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
@@ -141,7 +143,8 @@ class UcusSec extends StatelessWidget {
                     icon: Image.asset(
                       'images/Ucus.png',
                       width: 40,
-                      height: 40,
+                        height: 40,
+                        color: const Color(0xFFFDDE55),
                     ),
                   ),
                 ),

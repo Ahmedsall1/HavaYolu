@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Sefer.dart';
@@ -17,8 +19,8 @@ class Seferler extends StatelessWidget {
           for (Sefer sefer in HavaYolu.SeferList)
             Card(
               child: ListTile(
-                leading: Icon(Icons.person),
-                title: Text("Sure: "+sefer.sure+" Saat  Mesafe : "+sefer.KM.toString()+" KM"),
+                leading: const Icon(Icons.person),
+                title: Text("Sure: ${sefer.sure} Saat  Mesafe : ${sefer.KM} KM"),
                 trailing: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -27,10 +29,10 @@ class Seferler extends StatelessWidget {
                           builder: (context) => SeferDuzelt(no:sefer.no)),
                     );
                   },
-                  child: Icon(Icons.edit,color:Colors.green),
+                  child: const Icon(Icons.edit,color:Colors.green),
                   
                 ),
-                subtitle: Text(sefer.nerden + "->" + sefer.nereye),
+                subtitle: Text("${sefer.nerden}->${sefer.nereye}"),
               ),
             )
         ],

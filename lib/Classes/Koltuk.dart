@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, division_optimization, non_constant_identifier_names, prefer_typing_uninitialized_variables
+
 import 'Yolcu.dart';
 
 class Koltuk {

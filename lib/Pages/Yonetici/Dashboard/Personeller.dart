@@ -1,10 +1,12 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/User.dart';
 import 'package:havayolu/Pages/Yonetici/Duzelt&Sil/PersonelDuzelt.dart';
 
 class Personeller extends StatelessWidget {
-  Personeller({super.key});
+  const Personeller({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,20 +19,20 @@ class Personeller extends StatelessWidget {
           for (User per in HavaYolu.PersonelList)
             Card(
               child: ListTile(
-                leading: Icon(Icons.person),
-                title: Text("ID: "+per.id.toString()+" Adi : "+per.name),
+                leading: const Icon(Icons.person),
+                title: Text("ID: ${per.id} Adi : ${per.name}"),
                 trailing: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PersonelDuzelt()),
+                          builder: (context) => const PersonelDuzelt()),
                     );
                   },
-                  child: Icon(Icons.edit,color:Colors.green),
+                  child: const Icon(Icons.edit,color:Colors.green),
                   
                 ),
-                subtitle: Text("Gorevi : "+per.gettip()),
+                subtitle: Text("Gorevi : ${per.gettip()}"),
               ),
             )
         ],

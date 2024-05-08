@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, file_names, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 // import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 

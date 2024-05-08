@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, depend_on_referenced_packages, unnecessary_import, use_super_parameters, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/widgets.dart';
@@ -12,7 +14,7 @@ var nereye = " ";
 DateTime tarih = DateTime.now();
 
 class SeferBul extends StatefulWidget {
-  SeferBul({Key? key}) : super(key: key);
+  const SeferBul({Key? key}) : super(key: key);
 
   @override
   _SeferBulState createState() => _SeferBulState();
@@ -72,8 +74,9 @@ class _SeferBulState extends State<SeferBul> {
                       ),
                       Image.asset(
                         'images/Ucus.png',
-                        width: 30,
-                        height: 30,
+                        width: 40,
+                        height: 40,
+                        color: const Color(0xFFFDDE55),
                       ),
                       const SizedBox(
                         width: 10.0,
@@ -130,8 +133,9 @@ class _SeferBulState extends State<SeferBul> {
                       ),
                       Image.asset(
                         'images/Inis.png',
-                        width: 30,
-                        height: 30,
+                        width: 40,
+                        height: 40,
+                        color: const Color(0xFFFDDE55),
                       ),
                       const SizedBox(
                         width: 10.0,
@@ -205,7 +209,7 @@ class _SeferBulState extends State<SeferBul> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(
+                          backgroundColor: const Color(
                               0xFFFDDE55), // Set background color to RGB(253, 222, 85)
                         ),
                         child: const Text(
@@ -238,7 +242,7 @@ class _SeferBulState extends State<SeferBul> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(
+              backgroundColor: const Color(
                   0xFFFDDE55), // Set background color to RGB(253, 222, 85)
             ),
             child: const Text(

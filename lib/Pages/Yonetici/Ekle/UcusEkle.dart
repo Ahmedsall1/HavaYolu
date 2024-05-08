@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, file_names, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 // import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 import 'package:dropdown_search/dropdown_search.dart';
@@ -5,14 +7,13 @@ import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Sefer.dart';
 import 'package:havayolu/Classes/Ucak.dart';
 import 'package:havayolu/Classes/Ucus.dart';
-import 'package:havayolu/Pages/Yonetici/Dashboard/Seferler.dart';
 import 'package:havayolu/Pages/Yonetici/Dashboard/Ucuslar.dart';
 
 List<String> seferlist = [];
 List<String> ucaklist = [];
 
 class UcusEkle extends StatefulWidget {
-  UcusEkle({Key? key}) : super(key: key) {
+  UcusEkle({super.key}) {
     for (Sefer sefer in HavaYolu.SeferList) {
       seferlist.add(sefer.no.toString());
     }
@@ -79,7 +80,7 @@ class _UcusEkle extends State<UcusEkle> {
                 ),
               ),
             ),
-            if (se = true) Text(nerden + "->" + nereye + " T:" + tarih),
+            if (se = true) Text("$nerden->$nereye T:$tarih"),
             Padding(
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 30),
@@ -134,7 +135,7 @@ class _UcusEkle extends State<UcusEkle> {
                 onChanged: (value) {
                   ucret = double.parse(value);
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Ucret',
                     hintText: 'Ucret'),
@@ -145,15 +146,15 @@ class _UcusEkle extends State<UcusEkle> {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 0, 150, 122),
+                  color: const Color.fromARGB(255, 0, 150, 122),
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
                   Ucus(sure, sefer, ucak, ucret);
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Ucuslar()));
+                      context, MaterialPageRoute(builder: (_) => const Ucuslar()));
                 },
-                child: Text(
+                child: const Text(
                   'Ekle',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),

@@ -1,16 +1,13 @@
-import 'dart:math';
+// ignore_for_file: use_super_parameters, depend_on_referenced_packages, file_names, library_private_types_in_public_api
+
 
 import 'package:flutter/material.dart';
 // import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
-import 'package:havayolu/Classes/Hostese.dart';
 import 'package:havayolu/Classes/Personel.dart';
-import 'package:havayolu/Classes/Pilot.dart';
-import 'package:havayolu/Classes/Sefer.dart';
 import 'package:havayolu/Classes/Sirket.dart';
 import 'package:havayolu/Classes/Ucak.dart';
-import 'package:havayolu/Pages/Yonetici/Dashboard/Seferler.dart';
 import 'package:havayolu/Pages/Yonetici/Dashboard/Ucaklar.dart';
 
 List<String> pilotlis = [];
@@ -126,15 +123,15 @@ class _UcakEkle extends State<UcakEkle> {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 0, 150, 122),
+                  color: const Color.fromARGB(255, 0, 150, 122),
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
                   Ucak(tip, name, pilot!, host!, Sirket(sirketadi));
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Ucaklar()));
+                      context, MaterialPageRoute(builder: (_) => const Ucaklar()));
                 },
-                child: Text(
+                child: const Text(
                   'Ekle',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),

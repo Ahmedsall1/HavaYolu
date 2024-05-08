@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, file_names, must_be_immutable
+
 import 'package:flutter/material.dart';
 // import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 import 'package:dropdown_search/dropdown_search.dart';
@@ -34,7 +36,7 @@ class PersonelEkle extends StatelessWidget {
                 },
                 items: tip,
                 
-                popupProps: PopupProps.bottomSheet(
+                popupProps: const PopupProps.bottomSheet(
                   
                   showSelectedItems: true,
                   isFilterOnline: true,
@@ -50,7 +52,7 @@ class PersonelEkle extends StatelessWidget {
                 onChanged: (value) {
                   name = value;
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Name',
                     hintText: 'Personel Adi Giriniz'),
@@ -60,7 +62,7 @@ class PersonelEkle extends StatelessWidget {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 0, 150, 122),
+                  color: const Color.fromARGB(255, 0, 150, 122),
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
@@ -70,20 +72,20 @@ class PersonelEkle extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (_) => Personeller()));
+                              builder: (_) => const Personeller()));
                     }
                     else if (gorev == tip[1]){
                       Hostese(name);
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (_) => Personeller()));
+                              builder: (_) => const Personeller()));
                     }
                   } else {
                     _showDialog(context);
                   }
                 },
-                child: Text(
+                child: const Text(
                   'Ekle',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
@@ -109,14 +111,14 @@ class PersonelEkle extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Hata'),
-          content: Text('Lutfan Personel Adi Giriniz !'),
+          title: const Text('Hata'),
+          content: const Text('Lutfan Personel Adi Giriniz !'),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         );

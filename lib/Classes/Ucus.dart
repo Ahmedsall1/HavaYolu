@@ -1,5 +1,7 @@
 // import 'package:havatest/Classes/Hostese.dart';
 // import 'package:havatest/Classes/Pilot.dart';
+// ignore_for_file: file_names, non_constant_identifier_names, prefer_initializing_formals, unnecessary_this, prefer_interpolation_to_compose_strings
+
 import 'package:havayolu/Classes/Personel.dart';
 
 import 'Sefer.dart';

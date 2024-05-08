@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, depend_on_referenced_packages, use_super_parameters, library_private_types_in_public_api, avoid_print
+
 import 'package:flutter/material.dart';
 // import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 import 'package:dropdown_search/dropdown_search.dart';
@@ -103,7 +105,7 @@ class _SeferEkle extends State<SeferEkle> {
                 onChanged: (value) {
                   km = int.parse(value);
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'KM',
                     hintText: 'KM'),
@@ -118,15 +120,15 @@ class _SeferEkle extends State<SeferEkle> {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 0, 150, 122),
+                  color: const Color.fromARGB(255, 0, 150, 122),
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
                   Sefer(km, nerden, nereye, sure, date, true);
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Seferler()));
+                      context, MaterialPageRoute(builder: (_) => const Seferler()));
                 },
-                child: Text(
+                child: const Text(
                   'Ekle',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),

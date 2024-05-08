@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, file_names
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/Yonetici.dart';
 import 'package:havayolu/Pages/Yonetici/YIndex.dart';

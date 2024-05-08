@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Ucus.dart';
@@ -18,26 +20,17 @@ class Ucuslar extends StatelessWidget {
             Card(
               child: ListTile(
                 leading: Text(ucus.i.toString()),
-                title: Text("Tarih: " +
-                    ucus.formattedDate +
-                    "   Saat : " +
-                    ucus.saat +
-                    " KM"),
+                title: Text("Tarih: ${ucus.formattedDate}   Saat : ${ucus.saat} KM"),
                 trailing: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => UcusDuzelt()),
+                      MaterialPageRoute(builder: (context) => const UcusDuzelt()),
                     );
                   },
-                  child: Icon(Icons.edit,color:Colors.green),
+                  child: const Icon(Icons.edit,color:Colors.green),
                 ),
-                subtitle: Text(ucus.nerden +
-                    "->" +
-                    ucus.nereye +
-                    " " +
-                    ucus.KM.toString() +
-                    " KM "+" P: "+ucus.ucak.pilot.name +" Ş: "+ucus.ucak.name),
+                subtitle: Text("${ucus.nerden}->${ucus.nereye} ${ucus.KM} KM  P: ${ucus.ucak.pilot.name} Ş: ${ucus.ucak.name}"),
               ),
             )
         ],

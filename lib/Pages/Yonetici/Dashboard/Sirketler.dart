@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, prefer_is_not_empty
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Sirket.dart';
@@ -18,20 +20,20 @@ class Sirketler extends StatelessWidget {
             Card(
               
               child: ListTile(
-                leading: Icon(Icons.apartment),
-                title: Text("ID: "+sir.id.toString()+" Adi : "+sir.name),
+                leading: const Icon(Icons.apartment),
+                title: Text("ID: ${sir.id} Adi : ${sir.name}"),
                 trailing: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => SirketDuzelt()),
+                          builder: (context) => const SirketDuzelt()),
                     );
                   },
-                  child: Icon(Icons.edit,color:Colors.green),
+                  child: const Icon(Icons.edit,color:Colors.green),
                   
                 ),
-                subtitle: Text("Ucaklari : "+(!sir.ucakList.isEmpty ? sir.ucakList[0].name : "Ucak yok")),
+                subtitle: Text("Ucaklari : ${!sir.ucakList.isEmpty ? sir.ucakList[0].name : "Ucak yok"}"),
               ),
             )
         ],

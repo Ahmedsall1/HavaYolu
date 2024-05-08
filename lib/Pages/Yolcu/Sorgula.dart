@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, must_be_immutable, unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 
@@ -21,7 +23,7 @@ class Sorgula extends StatelessWidget {
           children: [
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 onChanged: (value) {
                   email = value;
@@ -53,7 +55,7 @@ class Sorgula extends StatelessWidget {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Color(0xFFFDDE55),
+                  color: const Color(0xFFFDDE55),
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
@@ -98,14 +100,14 @@ class Sorgula extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Hata'),
-          content: Text('Yanlış Bilgiler !'),
+          title: const Text('Hata'),
+          content: const Text('Yanlış Bilgiler !'),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         );

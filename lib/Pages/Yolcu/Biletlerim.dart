@@ -1,4 +1,5 @@
-////////
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/Bilet.dart';
 
@@ -6,6 +7,7 @@ import 'package:havayolu/Classes/Yolcu.dart';
 import 'package:havayolu/Pages/Shared/Appbar.dart';
 import 'package:havayolu/Pages/Yolcu/Biletim.dart';
 
+// ignore: must_be_immutable
 class Biletlerim extends StatelessWidget {
   late Yolcu yolcu;
 

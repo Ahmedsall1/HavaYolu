@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:havayolu/Classes/Bilet.dart';
 import 'User.dart';
 import 'HavaYolu.dart';

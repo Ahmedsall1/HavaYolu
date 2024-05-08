@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Ucak.dart';
@@ -17,20 +19,20 @@ class Ucaklar extends StatelessWidget {
           for (Ucak uc in HavaYolu.UcakList)
             Card(
               child: ListTile(
-                leading: Icon(Icons.airplane_ticket_sharp),
-                title: Text("ID: "+uc.id.toString()+" Adi : "+uc.name+" K: "+uc.koltukSayisi.toString()),
+                leading: const Icon(Icons.airplane_ticket_sharp),
+                title: Text("ID: ${uc.id} Adi : ${uc.name} K: ${uc.koltukSayisi}"),
                 trailing: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => UcakDuzelt()),
+                          builder: (context) => const UcakDuzelt()),
                     );
                   },
-                  child: Icon(Icons.edit,color:Colors.green),
+                  child: const Icon(Icons.edit,color:Colors.green),
                   
                 ),
-                subtitle: Text(" P: "+uc.pilot.name+" H: "+uc.hosteseList.first.name+" Ş: "+uc.sirket.name),
+                subtitle: Text(" P: ${uc.pilot.name} H: ${uc.hosteseList.first.name} Ş: ${uc.sirket.name}"),
               ),
             )
         ],

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/Sirket.dart';
 import 'package:havayolu/Pages/Yonetici/Dashboard/Sirketler.dart';
@@ -24,7 +26,7 @@ class SirketEkle extends StatelessWidget {
                 onChanged: (value) {
                   name = value;
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Name',
                     hintText: 'Personel Adi Giriniz'),
@@ -34,7 +36,7 @@ class SirketEkle extends StatelessWidget {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 0, 150, 122),
+                  color: const Color.fromARGB(255, 0, 150, 122),
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
@@ -42,10 +44,10 @@ class SirketEkle extends StatelessWidget {
 
                       Sirket(name);
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => Sirketler()));
+                          MaterialPageRoute(builder: (_) => const Sirketler()));
                   } 
                 },
-                child: Text(
+                child: const Text(
                   'Ekle',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),

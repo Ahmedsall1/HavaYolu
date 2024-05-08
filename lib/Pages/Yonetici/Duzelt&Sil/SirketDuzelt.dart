@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 // import 'package:havayolu/Pages/Yolcu/KoltukSec.dart';
 
@@ -10,7 +12,7 @@ class SirketDuzelt extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Sirkete Duzelt'),
       ),
-      body: Center(
+      body: const Center(
         // child: ElevatedButton(
         //   child: const Text('Yonetici'),
         //   onPressed: () {

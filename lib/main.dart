@@ -133,7 +133,7 @@ class FirstRoute extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => SeferBul()),
+                            MaterialPageRoute(builder: (context) => const SeferBul()),
                           );
                         },
                       ),

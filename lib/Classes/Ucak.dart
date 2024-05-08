@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_initializing_formals, non_constant_identifier_names, avoid_print, file_names, duplicate_ignore
+
 import 'package:havayolu/Classes/Personel.dart';
 
 // import 'Pilot.dart';
@@ -8,6 +10,7 @@ import 'Sirket.dart';
 import 'Yolcu.dart';
 
 class Ucak {
+  // ignore: non_constant_identifier_names
   static int ID = 1;
   static bool iss = false;
   late int id;

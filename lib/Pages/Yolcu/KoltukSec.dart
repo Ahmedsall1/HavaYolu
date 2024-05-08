@@ -1,8 +1,9 @@
+// ignore_for_file: must_be_immutable, file_names
+
 import 'package:flutter/material.dart';
 import 'package:havayolu/Classes/HavaYolu.dart';
 import 'package:havayolu/Classes/Koltuk.dart';
 import 'package:havayolu/Pages/Yolcu/Kesinlestir.dart';
-import 'package:havayolu/Classes/Ucak.dart';
 import 'package:havayolu/Classes/Ucus.dart';
 
 bool isSelected = false;
@@ -32,10 +33,10 @@ class KoltukSec extends StatelessWidget {
         body: Column(
           children: [
             const Card(
-              color: const Color.fromARGB(255, 0, 80, 150),
+              color: Color.fromARGB(255, 0, 80, 150),
               elevation: 20.0,
               child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(20.0),
                 child: Column(
                   children: [
                     Row(

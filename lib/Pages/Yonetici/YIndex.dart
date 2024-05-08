@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 import 'package:havayolu/Pages/Personel/Pindex.dart';
@@ -27,19 +29,21 @@ class YIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF005096),
       appBar: AppBar(
+        backgroundColor: const Color(0xFF005096),
         title: const Text(
           'Yönetici',
           style: TextStyle(
             fontSize: 25,
-            color: Color(0xFF005096),
+            color: Color(0xFFFDDE55),
             fontFamily: "Times New Roman",
             fontWeight: FontWeight.w600,
           ),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.close),
+            icon: const Icon(Icons.close,color: Color(0xFFFDDE55),),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -47,204 +51,30 @@ class YIndex extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Card(
-          color: const Color.fromARGB(255, 0, 80, 150),
-          elevation: 20.0,
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: ListView(
+        child: ListView(
+          children: [
+            const Row(
               children: [
-                Row(
-                  children: [
-                    const SizedBox(
-                      width: 100.0,
-                    ),
-                    Image.asset(
-                      'images/LeftLogo.png',
-                      height: 50,
-                      width: 150,
-                    ),
-                  ],
+                SizedBox(
+                  width: 100.0,
                 ),
-                Card(
-                    color: const Color.fromRGBO(253, 222, 85, 1),
-                    elevation: 10.0,
-                    child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Column(
-                          children: [
-                            const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Ekle",
-                                  style: TextStyle(
-                                    color: Color(0xFF005096),
-                                    fontSize: 40,
-                                    fontFamily: "Times New Roman",
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Container(
-                              height: 50,
-                              width: 210,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF005096),
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: TextButton(
-                                child: const Text(
-                                  'Personel Ekle',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(253, 222, 85, 1),
-                                    fontSize: 25,
-                                    fontFamily: "Times New Roman",
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => PersonelEkle()),
-                                  );
-                                },
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20.0,
-                            ),
-                            Container(
-                              height: 50,
-                              width: 210,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF005096),
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: TextButton(
-                                child: const Text(
-                                  'Sefer Ekle',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(253, 222, 85, 1),
-                                    fontSize: 25,
-                                    fontFamily: "Times New Roman",
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => SeferEkle()),
-                                  );
-                                },
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20.0,
-                            ),
-                            Container(
-                              height: 50,
-                              width: 210,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF005096),
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: TextButton(
-                                child: const Text(
-                                  'Sirket Ekle',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(253, 222, 85, 1),
-                                    fontSize: 25,
-                                    fontFamily: "Times New Roman",
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => SirketEkle()),
-                                  );
-                                },
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20.0,
-                            ),
-                            Container(
-                              height: 50,
-                              width: 210,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF005096),
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: TextButton(
-                                child: const Text(
-                                  'Ucak Ekle',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(253, 222, 85, 1),
-                                    fontSize: 25,
-                                    fontFamily: "Times New Roman",
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => UcakEkle()),
-                                  );
-                                },
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20.0,
-                            ),
-                            Container(
-                              height: 50,
-                              width: 210,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFF005096),
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: TextButton(
-                                child: const Text(
-                                  'Ucus Ekle',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(253, 222, 85, 1),
-                                    fontSize: 25,
-                                    fontFamily: "Times New Roman",
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => UcusEkle()),
-                                  );
-                                },
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20.0,
-                            ),
-                          ],
-                        ))),
-
-                ////////////////////////////////Personele Sorgula //////////////////////////////////
-                Card(
-                  color: const Color.fromRGBO(253, 222, 85, 1),
-                  elevation: 10.0,
-                  child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Column(children: [
+              ],
+            ),
+            Card(
+                color: const Color(0xFFFDDE55),
+                elevation: 10.0,
+                child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      children: [
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Sorgula",
+                              "Ekle",
                               style: TextStyle(
                                 color: Color(0xFF005096),
-                                fontSize: 30,
+                                fontSize: 40,
                                 fontFamily: "Times New Roman",
                                 fontWeight: FontWeight.w600,
                               ),
@@ -253,13 +83,13 @@ class YIndex extends StatelessWidget {
                         ),
                         Container(
                           height: 50,
-                          width: 250,
+                          width: 210,
                           decoration: BoxDecoration(
                               color: const Color(0xFF005096),
                               borderRadius: BorderRadius.circular(20)),
                           child: TextButton(
                             child: const Text(
-                              'Personele Sorgula',
+                              'Personel Ekle',
                               style: TextStyle(
                                 color: Color.fromRGBO(253, 222, 85, 1),
                                 fontSize: 25,
@@ -271,27 +101,189 @@ class YIndex extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Pindex()),
+                                    builder: (context) => PersonelEkle()),
                               );
                             },
                           ),
                         ),
                         const SizedBox(
-                              height: 20.0,
+                          height: 20.0,
+                        ),
+                        Container(
+                          height: 50,
+                          width: 210,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF005096),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: TextButton(
+                            child: const Text(
+                              'Sefer Ekle',
+                              style: TextStyle(
+                                color: Color.fromRGBO(253, 222, 85, 1),
+                                fontSize: 25,
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                      ])),
-                ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SeferEkle()),
+                              );
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        Container(
+                          height: 50,
+                          width: 210,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF005096),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: TextButton(
+                            child: const Text(
+                              'Sirket Ekle',
+                              style: TextStyle(
+                                color: Color.fromRGBO(253, 222, 85, 1),
+                                fontSize: 25,
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SirketEkle()),
+                              );
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        Container(
+                          height: 50,
+                          width: 210,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF005096),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: TextButton(
+                            child: const Text(
+                              'Ucak Ekle',
+                              style: TextStyle(
+                                color: Color.fromRGBO(253, 222, 85, 1),
+                                fontSize: 25,
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => UcakEkle()),
+                              );
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        Container(
+                          height: 50,
+                          width: 210,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF005096),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: TextButton(
+                            child: const Text(
+                              'Ucus Ekle',
+                              style: TextStyle(
+                                color: Color.fromRGBO(253, 222, 85, 1),
+                                fontSize: 25,
+                                fontFamily: "Times New Roman",
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => UcusEkle()),
+                              );
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                      ],
+                    ))),
 
-                //////////////////////////////// Duzelt&Sil //////////////////////////////////
-
-                //////////////////////////////// Dashbord //////////////////////////////////
-              ],
+            ////////////////////////////////Personele Sorgula //////////////////////////////////
+            Card(
+              color: const Color.fromRGBO(253, 222, 85, 1),
+              elevation: 10.0,
+              child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Sorgula",
+                          style: TextStyle(
+                            color: Color(0xFF005096),
+                            fontSize: 30,
+                            fontFamily: "Times New Roman",
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      height: 50,
+                      width: 250,
+                      decoration: BoxDecoration(
+                          color: const Color(0xFF005096),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: TextButton(
+                        child: const Text(
+                          'Personele Sorgula',
+                          style: TextStyle(
+                            color: Color.fromRGBO(253, 222, 85, 1),
+                            fontSize: 25,
+                            fontFamily: "Times New Roman",
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Pindex()),
+                          );
+                        },
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                  ])),
             ),
-          ),
+
+            //////////////////////////////// Duzelt&Sil //////////////////////////////////
+
+            //////////////////////////////// Dashbord //////////////////////////////////
+          ],
         ),
       ),
       drawer: Drawer(
-        backgroundColor: Color(0xFF005096),
+        
+        backgroundColor: const Color(0xFF005096),
         child: ListView(
           children: [
             ListTile(
@@ -305,7 +297,7 @@ class YIndex extends StatelessWidget {
                 ),
               ),
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Personeller())),
+                  MaterialPageRoute(builder: (context) => const Personeller())),
             ),
             ListTile(
               title: const Text(
@@ -318,7 +310,7 @@ class YIndex extends StatelessWidget {
                 ),
               ),
               onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Seferler())),
+                  context, MaterialPageRoute(builder: (context) => const Seferler())),
             ),
             ListTile(
               title: const Text(
@@ -331,7 +323,7 @@ class YIndex extends StatelessWidget {
                 ),
               ),
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Sirketler())),
+                  MaterialPageRoute(builder: (context) => const Sirketler())),
             ),
             ListTile(
               title: const Text(
@@ -344,7 +336,7 @@ class YIndex extends StatelessWidget {
                 ),
               ),
               onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Ucaklar())),
+                  context, MaterialPageRoute(builder: (context) => const Ucaklar())),
             ),
             ListTile(
               title: const Text(
@@ -357,7 +349,7 @@ class YIndex extends StatelessWidget {
                 ),
               ),
               onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Ucuslar())),
+                  context, MaterialPageRoute(builder: (context) => const Ucuslar())),
             ),
             ListTile(
               title: const Text(
@@ -370,7 +362,7 @@ class YIndex extends StatelessWidget {
                 ),
               ),
               onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Yolcular())),
+                  context, MaterialPageRoute(builder: (context) => const Yolcular())),
             ),
           ],
         ),
