@@ -62,6 +62,45 @@
   <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/PersonelPilot.jpg" width="300" height="600" >
   <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/PersonelHostes.jpg" width="300" height="600" >
 </div>
+
+<h2>Yönetici/Giriş</h2>
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/YLogin.jpg" width="300" height="600">
+
+
+<h2>Yönetici/Anasayfa</h2>
+<div style="display:flex">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/YIndex.jpg" width="300" height="600">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/YDrawer.jpg" width="300" height="600">
+</div>
+
+<h2>Yönetici/PersonelEkle</h2>
+<div style="display:flex">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/PersonelEkleP.jpg" width="300" height="600">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/PersonelEkleH.jpg" width="300" height="600">
+</div>
+<h2>Yönetici/SeferEkle</h2>
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferEkle.jpg" width="300" height="600">
+  
+<h2>Yönetici/ŞirketEkle</h2>
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SirketEkle.jpg" width="300" height="600">
+
+  <h2>Yönetici/UçakEkle</h2>
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/UcakEkle.jpg" width="300" height="600">
+  <h2>Yönetici/UçuşEkle</h2>
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/UcusEkle.jpg" width="300" height="600">
+
+  <h2>Yönetici/Listeler</h2>
+<div style="display:flex">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Personeller.jpg" width="300" height="600">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Seferler.jpg" width="300" height="600">
+
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Sirketler.jpg" width="300" height="600">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Ucaklar.jpg" width="300" height="600">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Ucuslar.jpg" width="300" height="600">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Yolcular.jpg" width="300" height="600">
+
+
+</div>
   
 <h2>  Kulanılan Araçlar </h2>
 <ul>
