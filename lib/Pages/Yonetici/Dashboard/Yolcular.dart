@@ -12,15 +12,37 @@ class Yolcular extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Yolcular'),
+        title: const Text(
+          'Yolcular',
+          style: TextStyle(
+            color: Color.fromARGB(255, 0, 80, 150),
+            fontSize: 20,
+            fontFamily: "Times New Roman",
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
-      body: Column(
+      body: ListView(
         children: [
           for (Yolcu yo in HavaYolu.YolcuList)
             Card(
+              color: const Color.fromARGB(255, 0, 80, 150),
+              elevation: 20.0,
               child: ListTile(
-                leading: const Icon(Icons.person_3_outlined,color: Colors.green,),
-                title: Text("ID: ${yo.id} Adi : ${yo.name}"),
+                leading: Image.asset(
+                  'images/Yolcu.png',
+                  width: 30,
+                  height: 30,
+                ),
+                title: Text(
+                  "ID: ${yo.id} ADI : ${yo.name}",
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: Color(0xFFFDDE55),
+                    fontFamily: "Times New Roman",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
                 trailing: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -29,10 +51,17 @@ class Yolcular extends StatelessWidget {
                           builder: (context) => const YolcuDuzelt()),
                     );
                   },
-                  child: const Icon(Icons.edit,color:Colors.green),
-                  
+                  child: const Icon(Icons.edit, color: Color(0xFFFDDE55)),
                 ),
-                subtitle: Text(" P: ${yo.Ytip} H: ${yo.email} K: ${yo.koltuk}"),
+                subtitle: Text(
+                  " T: ${yo.Ytip} E: ${yo.email} K: ${yo.koltuk}",
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: Color(0xFFFDDE55),
+                    fontFamily: "Times New Roman",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               ),
             )
         ],

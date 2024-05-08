@@ -12,16 +12,33 @@ class Sirketler extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sirketler'),
+        title: const Text(
+          'Sirketler',
+          style: TextStyle(
+            color: Color.fromARGB(255, 0, 80, 150),
+            fontSize: 25,
+            fontFamily: "Times New Roman",
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
-      body: Column(
+      body: ListView(
         children: [
           for (Sirket sir in HavaYolu.SirketiList)
             Card(
-              
+              color: const Color.fromARGB(255, 0, 80, 150),
+              elevation: 20.0,
               child: ListTile(
-                leading: const Icon(Icons.apartment),
-                title: Text("ID: ${sir.id} Adi : ${sir.name}"),
+                leading: sir.logo,
+                title: Text(
+                  "ID: ${sir.id} Adi : ${sir.name}",
+                  style: const TextStyle(
+                    color: Color(0xFFFDDE55),
+                    fontSize: 16,
+                    fontFamily: "Times New Roman",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
                 trailing: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -30,10 +47,17 @@ class Sirketler extends StatelessWidget {
                           builder: (context) => const SirketDuzelt()),
                     );
                   },
-                  child: const Icon(Icons.edit,color:Colors.green),
-                  
+                  child: const Icon(Icons.edit, color: Color(0xFFFDDE55)),
                 ),
-                subtitle: Text("Ucaklari : ${!sir.ucakList.isEmpty ? sir.ucakList[0].name : "Ucak yok"}"),
+                subtitle: Text(
+                  "Uçakları : ${!sir.ucakList.isEmpty ? sir.ucakList[0].name : "Ucak yok"}",
+                  style: const TextStyle(
+                    color: Color(0xFFFDDE55),
+                    fontSize: 16,
+                    fontFamily: "Times New Roman",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               ),
             )
         ],

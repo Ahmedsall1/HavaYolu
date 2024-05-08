@@ -12,25 +12,55 @@ class Ucuslar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ucuslar'),
+        title: const Text(
+          'Ucuslar',
+          style: TextStyle(
+            color: Color.fromARGB(255, 0, 80, 150),
+            fontSize: 20,
+            fontFamily: "Times New Roman",
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
-      body: Column(
+      body: ListView(
         children: [
           for (Ucus ucus in HavaYolu.UcusList)
             Card(
+              color: const Color.fromARGB(255, 0, 80, 150),
+              elevation: 20.0,
               child: ListTile(
-                leading: Text(ucus.i.toString()),
-                title: Text("Tarih: ${ucus.formattedDate}   Saat : ${ucus.saat} KM"),
+                leading: const Icon(
+                  Icons.airplane_ticket_outlined,
+                  color: Color(0xFFFDDE55),
+                ),
+                title: Text(
+                  "Tarih: ${ucus.formattedDate}   Saat : ${ucus.saat} KM",
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: Color(0xFFFDDE55),
+                    fontFamily: "Times New Roman",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
                 trailing: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const UcusDuzelt()),
+                      MaterialPageRoute(
+                          builder: (context) => const UcusDuzelt()),
                     );
                   },
-                  child: const Icon(Icons.edit,color:Colors.green),
+                  child: const Icon(Icons.edit, color: Color(0xFFFDDE55)),
                 ),
-                subtitle: Text("${ucus.nerden}->${ucus.nereye} ${ucus.KM} KM  P: ${ucus.ucak.pilot.name} Ş: ${ucus.ucak.name}"),
+                subtitle: Text(
+                  "${ucus.nerden}->${ucus.nereye} ${ucus.KM} KM  P: ${ucus.ucak.pilot.name} Ş: ${ucus.ucak.name}",
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: Color(0xFFFDDE55),
+                    fontFamily: "Times New Roman",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               ),
             )
         ],
