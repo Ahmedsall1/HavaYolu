@@ -25,10 +25,18 @@
 
 <h2> AnaSayfa </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/AnaSayfa.jpg" width="300" height="600">
-<h2> Yolcu/Sefer Bul </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" width="300" height="600" >
-<h2>  Yolcu/Uçuş Bul </h2>
-<img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Ucusbul.jpg" width="300" height="600" >
+
+<h2>Yolcu/Sefer Bul</h2>
+
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/SeferBul.jpg" width="300" height="600">
+
+
+
+<h2>  Yolcu/Uçuş Bul<h2> 
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Ucusbul.jpg" width="300" height="600" >
+
+
+
 <h2>  Yolcu/Koltuk Seç</h2>
 
 <div style="display:flex">
@@ -47,6 +55,14 @@
 <h2>  Yolcu/Bilet </h2>
 <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/Bilet.jpg" width="300" height="600">
 
+<h2>Personel/Giriş</h2>
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/PersonelGiris.jpg" width="300" height="600">
+<h2>Personel/Sorgula(Pilot||Hostese)</h2>
+<div style="display:flex">
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/PersonelPilot.jpg" width="300" height="600" >
+  <img src="https://github.com/Ahmedsall1/HavaYolu/blob/main/about_project/PersonelHostes.jpg" width="300" height="600" >
+</div>
+  
 <h2>  Kulanılan Araçlar </h2>
 <ul>
     <li> Flutter/Dart </li>
