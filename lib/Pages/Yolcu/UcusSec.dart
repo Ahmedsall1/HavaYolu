@@ -28,15 +28,39 @@ class UcusSec extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          '${nerden.replaceAll("Airport", "")} >> ${nereye.replaceAll("Airport", "")}',
-          style: const TextStyle(
-            color: Color.fromARGB(255, 0, 80, 150),
-            fontFamily: "Times New Roman",
-            fontWeight: FontWeight.w600,
+          title: Row(
+        children: [
+          Text(
+            nerden.replaceAll("Airport", " "),
+            style: const TextStyle(
+              color: Color.fromARGB(255, 0, 80, 150),
+              fontFamily: "Times New Roman",
+              fontWeight: FontWeight.w600,
+            ),
           ),
-        ),
-      ),
+          const RotationTransition(
+            turns: AlwaysStoppedAnimation(90 /
+                360), // Rotate the icon 90 degrees clockwise (to the right)
+            child: Icon(
+              Icons.airplanemode_active_outlined,
+              color: Color.fromARGB(255, 0, 80, 150),
+              size: 32,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              " ${nereye.replaceAll("Airport", " ")}",
+              style: const TextStyle(
+                color: Color.fromARGB(255, 0, 80, 150),
+                fontFamily: "Times New Roman",
+                fontWeight: FontWeight.w600,
+              ),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
+          ),
+        ],
+      )),
       body: Center(
         child: ListView.builder(
           itemCount: ucuslar.length,
@@ -110,7 +134,7 @@ class UcusSec extends StatelessWidget {
                       ),
                       const Text(
                         " 1x15 kg",
-                        style:  TextStyle(
+                        style: TextStyle(
                           fontSize: 14,
                           color: Colors.white,
                           fontFamily: "Times New Roman",
@@ -143,8 +167,8 @@ class UcusSec extends StatelessWidget {
                     icon: Image.asset(
                       'images/Ucus.png',
                       width: 40,
-                        height: 40,
-                        color: const Color(0xFFFDDE55),
+                      height: 40,
+                      color: const Color(0xFFFDDE55),
                     ),
                   ),
                 ),
