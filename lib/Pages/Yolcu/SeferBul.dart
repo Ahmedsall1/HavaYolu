@@ -113,15 +113,15 @@ class _SeferBulState extends State<SeferBul> {
                       showSelectedItems: true,
                       isFilterOnline: true,
                       showSearchBox: true,
-                      textStyle: TextStyle(color: Colors.white),
+                      
                     ),
-                    dropdownSearchDecoration: const InputDecoration(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            width: 5.0,
-                            color: Colors.white), // Set border color to white
-                      ),
-                    ),
+                    
+                    dropdownDecoratorProps: const DropDownDecoratorProps(
+        dropdownSearchDecoration: InputDecoration(
+            labelText: "Menu mode",
+            hintText: "country in menu mode",
+        ),
+    ),
                   ),
                   const SizedBox(
                     height: 20.0,
@@ -172,13 +172,12 @@ class _SeferBulState extends State<SeferBul> {
                       isFilterOnline: true,
                       showSearchBox: true,
                     ),
-                    dropdownSearchDecoration: const InputDecoration(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            width: 5.0,
-                            color: Colors.white), // Set border color to white
-                      ),
-                    ),
+                    dropdownDecoratorProps: const DropDownDecoratorProps(
+        dropdownSearchDecoration: InputDecoration(
+            labelText: "Menu mode",
+            hintText: "country in menu mode",
+        ),
+    ),
                   ),
                   const SizedBox(
                     height: 20.0,
